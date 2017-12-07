@@ -2,7 +2,7 @@
 host = '54.212.193.26';	// hostname or IP address
 // host = '172.16.153.110';	// hostname or IP address
 port = 8086;
-topic = '#';		// topic to subscribe to
+topic = 'application/2/node/0000000000000001/rx';		// topic to subscribe to
 useTLS = false;
 username = null;
 password = null;
@@ -17,6 +17,8 @@ password = null;
 // path = "/data/cloud?device=12345";
 var mqtt;
 var reconnectTimeout = 2000;
+
+var dot = require('../../../../dot-object')
 
 function MQTTconnect() {
 if (typeof path == "undefined") {
@@ -34,6 +36,7 @@ mqtt = new Paho.MQTT.Client(
         cleanSession: cleansession,
         onSuccess: onConnect,
         onFailure: function (message) {
+          //message.errorMessage
             $('#status').val("Connection failed: " + message.errorMessage + "Retrying");
             setTimeout(MQTTconnect, reconnectTimeout);
         }
@@ -57,9 +60,13 @@ function onConnect() {
     $('#topic').val(topic);
 }
 
+function getdata( a, data) {
+  return dot.pick( a,data);
+}
+
 function onConnectionLost(response) {
     setTimeout(MQTTconnect, reconnectTimeout);
-    $('#status').val("connection lost: " + responseObject.errorMessage + ". Reconnecting");
+    $('#status').val("connection lost: " + response.errorMessage + ". Reconnecting");
 
 };
 
@@ -67,8 +74,11 @@ function onMessageArrived(message) {
 
     var topic = message.destinationName;
     var payload = message.payloadString;
-
-    $('#ws').prepend('<li>' + topic + ' = ' + payload + '</li>');
+    var parse_data = JSON.parse(payload);
+    var phyPayload1 = getdata('txInfo.data', parse_data);
+    var buf = new Buffer(phyPayload1,'base64');
+    var payload2 = buf.toString();
+    $('#ws').prepend('<li>' + topic + ' = ' + payload2 + '</li>');
 };
 
 

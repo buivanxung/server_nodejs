@@ -148,7 +148,7 @@ client.on('message', function (topic, message) {
 
   //var packet = lora_packet.fromWire(new Buffer(phyPayload.toString(), 'hex'));
   //console.log("packet.toString()=\n" + packet);
-  
+
 
 
   if(codeRate != null) {
@@ -167,7 +167,7 @@ client.on('message', function (topic, message) {
             return console.error('error happened during query', err)
           }
         })
-	
+
       })
         }
 })

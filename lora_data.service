@@ -1,0 +1,13 @@
+[Unit]
+
+Description=LoRa Gateway Design by Van Xung UIT
+After=network.service
+
+[Service]
+WorkingDirectory=/home/pi/lora/packet_forwarder/lora_pkt_fwd/
+ExecStart=/home/pi/lora/packet_forwarder/lora_pkt_fwd/start.sh
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
