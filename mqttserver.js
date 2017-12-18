@@ -1,9 +1,11 @@
 /////////////////////Website////////////////
 var express = require('express');
 var app = express();
-app.use(express.static("public"));
+var nodeExcel = require('excel-export');
+app.use(express.static('app/public'));
+app.set('views', __dirname + '/app/server/views');
 app.set('view engine', 'ejs');
-app.set("views","./views");
+//app.set("views","./views");
 app.listen(8089);
 
 ////////////////////////////////////////
@@ -12,49 +14,14 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false })
 ////////////////////////////////////////////
 var mqtt = require('mqtt')
 var dot = require('dot-object')
-var host = 'ws://54.212.193.26:8086'
+var host = 'ws://18.217.3.199:8086'
 var clientId = 'mqttjs_' + Math.random().toString(16).substr(2, 8)
-var id = 0;
-/////////////////////////////////////
-/*
-gateway/5ccf7ffffff01f6a/rx = {
-"rxInfo":
-{"mac":"5ccf7ffffff01f6a",
-"time":"0001-01-01T00:00:00Z",
-"timestamp":28758925,
-"frequency":868128723,
-"channel":0,"rfChain":0,
-"crcStatus":1,
-"codeRate":"4/5",
-"rssi":-93,
-"loRaSNR":-5,
-"size":21,
-"dataRate":
-{"modulation":"LORA",
-"spreadFactor":9,
-"bandwidth":125
-}
-},
-"phyPayload":"SF+w7XJGQx5GTRCFR0JSdsE5OFMG"}
-*/
-var parse;
-var mac;
-var rssi;
-var time;
-var timestamp;
-var frequency;
-var channel;
-var rfChain;
-var crcStatus;
-var codeRate;
-var loRaSNR;
-var size;
-var modulation;
-var spreadFactor;
-var bandwidth;
-var phyPayload;
+
+var fs = require('fs');
+var copyFrom = require('pg-copy-streams').from;
+csv = require('csv');
 ////////////////////////////////////
-var lora_packet = require('lora-packet');
+//var lora_packet = require('lora-packet');
 ////////////////////////////////
 
 var options = {
@@ -81,8 +48,8 @@ var client = mqtt.connect(host, options)
 var pg = require('pg')
 
 var configpg = {
-  user:'user1',
-  database: 'managerdevice',
+  user:'datalora',
+  database: 'loradb',
   password: '1234567',
   host: 'localhost',
   port: 5432,
@@ -96,24 +63,51 @@ app.get("/", function(req,res) {
     if (err) {
       return console.error('error fetching client from pool', err)
     }
-    client.query('SELECT * FROM lora', function (err, result) {
+    client.query('SELECT * FROM lora_imst', function (err, result) {
       done();
 
       if (err) {
         res.end();
         return console.error('error happened during query', err)
       }
-       // console.log( " Gia tri muon in: " + result.rows[0]);
+        console.log( " Gia tri muon in: " + result.rows[0]);
         res.render("showdata.ejs",{list:result});
   });
 
   });
 });
 ///////////////////////////////////////////////
-
+app.get("/viewdata", function(req,res) {
+  pool.connect(function (err, client, done) {
+    if (err) {
+      return console.error('error fetching client from pool', err)
+    }
+    client.query('SELECT * FROM lora_imst', function (err, result) {
+      done();
+      if (err) {
+        res.end();
+        return console.error('error happened during query', err)
+       }       //  console.log( " Gia tri muon in: " + result.rows[0].id);
+       res.render("web_data.ejs",{list:result});
+     });
+   });
+ });
+//////////////////////////////////////////////
+app.get('/Excel', function(req, res){
+	pool.connect(function(err, client, done) {
+	  var stream = client.query(copyFrom('COPY lora_imst FROM STDIN CSV'));
+	    var fileStream = fs.createReadStream('some_file.tsv')
+		fileStream.on('error', done);
+	      	stream.on('error', done);
+	        stream.on('end', done);
+		fileStream.pipe(stream);
+	});
+});
+//////////////////////////////////////////////
 
 
 function getdata( a, data) {
+  console.log(dot.pick(a,data));
   return dot.pick( a,data);
 }
 
@@ -126,50 +120,49 @@ client.on('error', function (err) {
   client.end()
 })
 
-client.subscribe('#', { qos: 0 })
+client.subscribe('application/+/node/+/rx', { qos: 0 })
 client.on('message', function (topic, message) {
-  console.log(message.toString())
-  parse_data = JSON.parse(message);
-  mac = getdata('rxInfo.mac', parse_data);
-  time = getdata('rxInfo.time', parse_data);
-  rssi = getdata('rxInfo.rssi', parse_data);
-  timestamp = getdata('rxInfo.timestamp', parse_data);
-  frequency = getdata('rxInfo.frequency', parse_data);
-  channel = getdata('rxInfo.channel', parse_data);
-  rfChain = getdata('rxInfo.rfChain', parse_data);
-  crcStatus = getdata('rxInfo.crcStatus', parse_data);
-  codeRate = getdata('rxInfo.codeRate', parse_data);
-  loRaSNR = getdata('rxInfo.loRaSNR', parse_data);
-  size = getdata('rxInfo.size', parse_data);
-  modulation = getdata('rxInfo.dataRate.modulation',parse_data);
-  spreadFactor = getdata('rxInfo.dataRate.spreadFactor', parse_data);
-  bandwidth = getdata('rxInfo.dataRate.bandwidth', parse_data);
-  phyPayload1 = getdata('phyPayload', parse_data);
-
-  //var packet = lora_packet.fromWire(new Buffer(phyPayload.toString(), 'hex'));
-  //console.log("packet.toString()=\n" + packet);
-
-
-
+  console.log(message.toString());
+  try {
+  var parse_data = JSON.parse(message);
+  }
+  catch(e) {
+   return console.error(e);
+  }
+  var appID = getdata('applicationID', parse_data);
+  var appName = getdata('applicationName', parse_data);
+  var deviceName = getdata('deviceName', parse_data);
+  var devEUI = getdata('devEUI', parse_data);
+  var mac = getdata('rxInfo[0].mac', parse_data);
+  var gatewayName = getdata('rxInfo[0].name', parse_data);
+  var rssi = getdata('rxInfo[0].rssi', parse_data);
+  var frequency = getdata('txInfo.frequency', parse_data);
+  var codeRate = getdata('txInfo.codeRate', parse_data);
+  var loRaSNR = getdata('rxInfo[0].loRaSNR', parse_data);
+  var modulation = getdata('txInfo.dataRate.modulation',parse_data);
+  var spreadFactor = getdata('txInfo.dataRate.spreadFactor', parse_data);
+  var bandwidth = getdata('txInfo.dataRate.bandwidth', parse_data);
+  var phyPayload1 = getdata('data', parse_data);
   if(codeRate != null) {
     pool.connect(function (err, client, done) {
-
         if (err) {
           return console.error('error fetching client from pool', err)
         }
-        id++;
+	var raw_data = phyPayload1.toString();
         var buf = new Buffer(phyPayload1,'base64');
-        phyPayload2 = buf.toString();
-        client.query("INSERT INTO public.lora(id, mac, time, rssi, timestamp, requency, channel, rfchain, crcstatus, coderate, lorasnr, size, modulation, spreadfactor, bandwidth, phppayload)  VALUES('"+id+"','"+mac+"','"+time+"','"+rssi+"','"+timestamp+"','"+frequency+"','"+channel+"','"+rfChain+"','"+crcStatus+"','"+codeRate+"','"+loRaSNR+"','"+size+"','"+modulation+"','"+spreadFactor+"', '"+bandwidth+"','"+phyPayload2+"')", function(err, result) {
+        var phyPayload2 = buf.toString();
+        console.log(phyPayload2);
+        var wdata = phyPayload2.split(",");
+        var temper = wdata[1];
+        var humid = wdata[0];
+        client.query("INSERT INTO public.lora_imst(application_id, application_name, device_name, dev_eui, mac, gateway_name, rssi, frequency, coderate, lorasnr, modulation, spreadfactor, bandwidth, data, temperature, humidity, created_at, updated_at) VALUES('"+appID+"','"+appName+"','"+deviceName+"','"+devEUI+"','"+mac+"','"+gatewayName+"','"+rssi+"','"+frequency+"','"+codeRate+"','"+loRaSNR+"','"+modulation+"','"+spreadFactor+"','"+bandwidth+"','"+raw_data+"','"+temper+"','"+humid+"','Now()','Now()')", function(err, result) {
           done();
-
           if (err) {
             return console.error('error happened during query', err)
           }
         })
-
       })
-        }
+    }
 })
 
 client.on('close', function () {

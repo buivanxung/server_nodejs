@@ -1,12 +1,12 @@
 
 
 // host = '172.16.153.122';	// hostname or IP address
-host = '18.217.18.87';	// hostname or IP address
-port = 8083;
+host = '18.217.3.199';	// hostname or IP address
+port = 8086;
 topic = '#';		// topic to subscribe to
 useTLS = false;
-username = "vanxung";
-password = "12345";
+username = null;
+password = null;
 
 var mqtt;
 var reconnectTimeout = 2000;
@@ -72,7 +72,7 @@ function onMessageArrived(message) {
     var phyPayload1 = b64DecodeUnicode(parse_data.data);
     //var buf = new Buffer(phyPayload1,'base64');
     //var payload2 = buf.toString();
-    $('#ws').prepend('<li>' + topic + ' = ' + phyPayload1 + '</li>');
+    $('#ws').prepend('<li>' + topic + ' = ' + payload + '</li>');
 };
 
 

@@ -1,6 +1,6 @@
 
 var lora_packet = require('lora-packet');
-var packet = lora_packet.fromWire(new Buffer('40F17DBE4900020001954378762B11FF0D', 'hex'));
+var packet = lora_packet.fromWire(new Buffer('AAAAAAAAAAAAAQAAAAAAAACxSHspKic=', 'base64'));
 
 // debug: prints out contents
 // - contents depend on packet type

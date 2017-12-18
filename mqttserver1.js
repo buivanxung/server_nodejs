@@ -16,27 +16,6 @@ var host = 'ws://54.212.193.26:8086'
 var clientId = 'mqttjs_' + Math.random().toString(16).substr(2, 8)
 var id = 0;
 /////////////////////////////////////
-/*
-gateway/5ccf7ffffff01f6a/rx = {
-"rxInfo":
-{"mac":"5ccf7ffffff01f6a",
-"time":"0001-01-01T00:00:00Z",
-"timestamp":28758925,
-"frequency":868128723,
-"channel":0,"rfChain":0,
-"crcStatus":1,
-"codeRate":"4/5",
-"rssi":-93,
-"loRaSNR":-5,
-"size":21,
-"dataRate":
-{"modulation":"LORA",
-"spreadFactor":9,
-"bandwidth":125
-}
-},
-"phyPayload":"SF+w7XJGQx5GTRCFR0JSdsE5OFMG"}
-*/
 var parse;
 var mac;
 var rssi;
@@ -130,7 +109,6 @@ app.get("/viewdata", function(req,res) {
 });
 
 //////////////////////////////////////////////
-
 
 
 function getdata( a, data) {

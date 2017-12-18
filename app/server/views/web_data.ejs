@@ -2,20 +2,33 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Show Data Realtime</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    	<title>Show Data Realtime</title>
+    	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
 
     <!-- Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	<link href="css/animate.css" rel="stylesheet" />
     <!-- Squad theme CSS -->
-    <link href="css/style_home.css" rel="stylesheet">
+    	<link href="css/style_home.css" rel="stylesheet">
 	<link href="color/default.css" rel="stylesheet">
+
+  <style>
+ ul.nav-pills {
+     top: 50px;
+     position: fixed;
+     background-color: #f1f1f1;
+ }
+
+ </style>
 
   </head>
 
-  <body>
-    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+  <body id="page-top" data-spy="scroll" data-target=".navbar-custom">
+    <div id="preloader">
+  	  <div id="load"></div>
+  	</div>
+    <nav class="navbar navbar-custom navbar-fixed-bottom nav-pills" role="navigation" style="background:#23434">
         <div class="container">
             <div class="navbar-header page-scroll">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
@@ -25,31 +38,26 @@
                   <!--  <h1>LoRa Management Device</h1> -->
                 </a>
             </div>
-
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
-      <ul class="nav navbar-nav">
-        <li><a href="#">Back</a></li>
-        <li class= "active"> <a href="#intro"> Floor 1</a></li>
-        <li><a href="#Floor2">Floor 2</a></li>
-        <li><a href="#Floor3">Floor 3</a></li>
-        <li><a href="#Floor4">Floor 4</a></li>
-        <li><a href="#Floor5">Floor 5</a></li>
-        <li><a href="#Floor6">Floor 6</a></li>
-        <li><a href="#Floor7">Floor 7</a></li>
-        <li><a href="#Floor8">Floor 8</a></li>
-        <li><a href="#Floor9">Floor 9</a></li>
-        <li><a href="#Floor10">Floor 10</a></li>
-        <li><a href="#Floor11">Floor 11</a></li>
-        <li><a href="#Floor12">Floor 12</a></li>
-
-      </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
-
+	    <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+	      <ul class="nav nav-pills nav-stacked">
+       		<li><a href="#">Back</a></li>
+        	<li class= "active"> <a href="#intro"> Floor 1</a></li>
+        	<li><a href="#Floor2">Floor 2</a></li>
+        	<li><a href="#Floor3">Floor 3</a></li>
+        	<li><a href="#Floor4">Floor 4</a></li>
+       		<li><a href="#Floor5">Floor 5</a></li>
+        	<li><a href="#Floor6">Floor 6</a></li>
+        	<li><a href="#Floor7">Floor 7</a></li>
+        	<li><a href="#Floor8">Floor 8</a></li>
+        	<li><a href="#Floor9">Floor 9</a></li>
+        	<li><a href="#Floor10">Floor 10</a></li>
+        	<li><a href="#Floor11">Floor 11</a></li>
+        	<li><a href="#Floor12">Floor 12</a></li>
+		</u>
+	    </div>
+    </div>
+  </nav>
     <section id="intro" class="home-section text-center">
     <div class="heading-about">
       <div class="container">
@@ -145,11 +153,11 @@
 
                 </div>
                 <div class="col-xs-4 col-sm-4 col-md-4">
-                <p  class="subtitle">Temperature</p>
+                <p  class="subtitle">Temper</p>
                   <h3> &nbsp;100&deg;C</h3>
                   </div>
                   <div class="col-xs-5 col-sm-5 col-md-5">
-                  <p class="subtitle">Humidity</p>
+                  <p class="subtitle">Humid</p>
                       <h3> &nbsp;100&permil;</h3>
                     </div>
             </div>
@@ -174,11 +182,11 @@
 
                 </div>
                 <div class="col-xs-4 col-sm-4 col-md-4">
-                <p  class="subtitle">Temperature</p>
+                <p  class="subtitle">Temper</p>
                   <h3>  &nbsp;100&deg;C</h3>
                   </div>
                   <div class="col-xs-5 col-sm-5 col-md-5">
-                  <p class="subtitle">Humidity</p>
+                  <p class="subtitle">Humid</p>
                       <h3> &nbsp;100&permil;</h3>
                     </div>
             </div>
@@ -203,11 +211,11 @@
 
                 </div>
                 <div class="col-xs-4 col-sm-4 col-md-4">
-                <p  class="subtitle">Temperature</p>
+                <p  class="subtitle">Temper</p>
                   <h3>  &nbsp;100&deg;C</h3>
                   </div>
                   <div class="col-xs-5 col-sm-5 col-md-5">
-                  <p class="subtitle">Humidity</p>
+                  <p class="subtitle">Humid</p>
                       <h3> &nbsp;100&permil;</h3>
                     </div>
             </div>
@@ -240,11 +248,11 @@
 
                 </div>
                 <div class="col-xs-4 col-sm-4 col-md-4">
-                <p  class="subtitle">Temperature</p>
+                <p  class="subtitle">Temper</p>
                   <h3>  &nbsp;100&deg;C</h3>
                   </div>
                   <div class="col-xs-5 col-sm-5 col-md-5">
-                  <p class="subtitle">Humidity</p>
+                  <p class="subtitle">Humid</p>
                       <h3> &nbsp;100&permil;</h3>
                     </div>
             </div>
@@ -267,11 +275,11 @@
 
                 </div>
                 <div class="col-xs-4 col-sm-4 col-md-4">
-                <p  class="subtitle">Temperature</p>
+                <p  class="subtitle">Temper</p>
                   <h3>  &nbsp;100&deg;C</h3>
                   </div>
                   <div class="col-xs-5 col-sm-5 col-md-5">
-                  <p class="subtitle">Humidity</p>
+                  <p class="subtitle">Humid</p>
                       <h3> &nbsp;100&permil;</h3>
                     </div>
             </div>
@@ -294,11 +302,11 @@
 
                 </div>
                 <div class="col-xs-4 col-sm-4 col-md-4">
-                <p  class="subtitle">Temperature</p>
+                <p  class="subtitle">Temper</p>
                   <h3>  &nbsp;100&deg;C</h3>
                   </div>
                   <div class="col-xs-5 col-sm-5 col-md-5">
-                  <p class="subtitle">Humidity</p>
+                  <p class="subtitle">Humid</p>
                       <h3> &nbsp;100&permil;</h3>
                     </div>
             </div>
@@ -321,11 +329,11 @@
 
                 </div>
                 <div class="col-xs-4 col-sm-4 col-md-4">
-                <p  class="subtitle">Temperature</p>
+                <p  class="subtitle">Temper</p>
                   <h3>  &nbsp;100&deg;C</h3>
                   </div>
                   <div class="col-xs-5 col-sm-5 col-md-5">
-                  <p class="subtitle">Humidity</p>
+                  <p class="subtitle">Humid</p>
                       <h3> &nbsp;100&permil;</h3>
                     </div>
             </div>
@@ -398,11 +406,11 @@
 
               </div>
               <div class="col-xs-4 col-sm-4 col-md-4">
-              <p  class="subtitle">Temperature</p>
+              <p  class="subtitle">Temper</p>
                 <h3>  &nbsp;100&deg;C</h3>
                 </div>
                 <div class="col-xs-5 col-sm-5 col-md-5">
-                <p class="subtitle">Humidity</p>
+                <p class="subtitle">Humid</p>
                     <h3> &nbsp;100&permil;</h3>
                   </div>
           </div>
@@ -425,11 +433,11 @@
 
               </div>
               <div class="col-xs-4 col-sm-4 col-md-4">
-              <p  class="subtitle">Temperature</p>
+              <p  class="subtitle">Temper</p>
                 <h3>  &nbsp;100&deg;C</h3>
                 </div>
                 <div class="col-xs-5 col-sm-5 col-md-5">
-                <p class="subtitle">Humidity</p>
+                <p class="subtitle">Humid</p>
                     <h3> &nbsp;100&permil;</h3>
                   </div>
           </div>
@@ -454,11 +462,11 @@
 
               </div>
               <div class="col-xs-4 col-sm-4 col-md-4">
-              <p  class="subtitle">Temperature</p>
+              <p  class="subtitle">Temper</p>
                 <h3>  &nbsp;100&deg;C</h3>
                 </div>
                 <div class="col-xs-5 col-sm-5 col-md-5">
-                <p class="subtitle">Humidity</p>
+                <p class="subtitle">Humid</p>
                     <h3> &nbsp;100&permil;</h3>
                   </div>
           </div>
@@ -483,11 +491,11 @@
 
               </div>
               <div class="col-xs-4 col-sm-4 col-md-4">
-              <p  class="subtitle">Temperature</p>
+              <p  class="subtitle">Temper</p>
                 <h3>  &nbsp;100&deg;C</h3>
                 </div>
                 <div class="col-xs-5 col-sm-5 col-md-5">
-                <p class="subtitle">Humidity</p>
+                <p class="subtitle">Humid</p>
                     <h3> &nbsp;100&permil;</h3>
                   </div>
           </div>
@@ -520,11 +528,11 @@
 
               </div>
               <div class="col-xs-4 col-sm-4 col-md-4">
-              <p  class="subtitle">Temperature</p>
+              <p  class="subtitle">Temper</p>
                 <h3>  &nbsp;100&deg;C</h3>
                 </div>
                 <div class="col-xs-5 col-sm-5 col-md-5">
-                <p class="subtitle">Humidity</p>
+                <p class="subtitle">Humid</p>
                     <h3> &nbsp;100&permil;</h3>
                   </div>
           </div>
@@ -547,11 +555,11 @@
 
               </div>
               <div class="col-xs-4 col-sm-4 col-md-4">
-              <p  class="subtitle">Temperature</p>
+              <p  class="subtitle">Temper</p>
                 <h3>  &nbsp;100&deg;C</h3>
                 </div>
                 <div class="col-xs-5 col-sm-5 col-md-5">
-                <p class="subtitle">Humidity</p>
+                <p class="subtitle">Humid</p>
                     <h3> &nbsp;100&permil;</h3>
                   </div>
           </div>
@@ -574,11 +582,11 @@
 
               </div>
               <div class="col-xs-4 col-sm-4 col-md-4">
-              <p  class="subtitle">Temperature</p>
+              <p  class="subtitle">Temper</p>
                 <h3>  &nbsp;100&deg;C</h3>
                 </div>
                 <div class="col-xs-5 col-sm-5 col-md-5">
-                <p class="subtitle">Humidity</p>
+                <p class="subtitle">Humid</p>
                     <h3> &nbsp;100&permil;</h3>
                   </div>
           </div>
@@ -601,11 +609,11 @@
 
               </div>
               <div class="col-xs-4 col-sm-4 col-md-4">
-              <p  class="subtitle">Temperature</p>
+              <p  class="subtitle">Temper</p>
                 <h3>  &nbsp;100&deg;C</h3>
                 </div>
                 <div class="col-xs-5 col-sm-5 col-md-5">
-                <p class="subtitle">Humidity</p>
+                <p class="subtitle">Humid</p>
                     <h3> &nbsp;100&permil;</h3>
                   </div>
           </div>
@@ -678,11 +686,11 @@
 
               </div>
               <div class="col-xs-4 col-sm-4 col-md-4">
-              <p  class="subtitle">Temperature</p>
+              <p  class="subtitle">Temper</p>
                 <h3>  &nbsp;100&deg;C</h3>
                 </div>
                 <div class="col-xs-5 col-sm-5 col-md-5">
-                <p class="subtitle">Humidity</p>
+                <p class="subtitle">Humid</p>
                     <h3> &nbsp;100&permil;</h3>
                   </div>
           </div>
@@ -705,11 +713,11 @@
 
               </div>
               <div class="col-xs-4 col-sm-4 col-md-4">
-              <p  class="subtitle">Temperature</p>
+              <p  class="subtitle">Temper</p>
                 <h3>  &nbsp;100&deg;C</h3>
                 </div>
                 <div class="col-xs-5 col-sm-5 col-md-5">
-                <p class="subtitle">Humidity</p>
+                <p class="subtitle">Humid</p>
                     <h3> &nbsp;100&permil;</h3>
                   </div>
           </div>
@@ -734,11 +742,11 @@
 
               </div>
               <div class="col-xs-4 col-sm-4 col-md-4">
-              <p  class="subtitle">Temperature</p>
+              <p  class="subtitle">Temper</p>
                 <h3>  &nbsp;100&deg;C</h3>
                 </div>
                 <div class="col-xs-5 col-sm-5 col-md-5">
-                <p class="subtitle">Humidity</p>
+                <p class="subtitle">Humid</p>
                     <h3> &nbsp;100&permil;</h3>
                   </div>
           </div>
@@ -763,11 +771,11 @@
 
               </div>
               <div class="col-xs-4 col-sm-4 col-md-4">
-              <p  class="subtitle">Temperature</p>
+              <p  class="subtitle">Temper</p>
                 <h3>  &nbsp;100&deg;C</h3>
                 </div>
                 <div class="col-xs-5 col-sm-5 col-md-5">
-                <p class="subtitle">Humidity</p>
+                <p class="subtitle">Humid</p>
                     <h3> &nbsp;100&permil;</h3>
                   </div>
           </div>
@@ -800,11 +808,11 @@
 
               </div>
               <div class="col-xs-4 col-sm-4 col-md-4">
-              <p  class="subtitle">Temperature</p>
+              <p  class="subtitle">Temper</p>
                 <h3>  &nbsp;100&deg;C</h3>
                 </div>
                 <div class="col-xs-5 col-sm-5 col-md-5">
-                <p class="subtitle">Humidity</p>
+                <p class="subtitle">Humid</p>
                     <h3> &nbsp;100&permil;</h3>
                   </div>
           </div>
@@ -827,11 +835,11 @@
 
               </div>
               <div class="col-xs-4 col-sm-4 col-md-4">
-              <p  class="subtitle">Temperature</p>
+              <p  class="subtitle">Temper</p>
                 <h3>  &nbsp;100&deg;C</h3>
                 </div>
                 <div class="col-xs-5 col-sm-5 col-md-5">
-                <p class="subtitle">Humidity</p>
+                <p class="subtitle">Humid</p>
                     <h3> &nbsp;100&permil;</h3>
                   </div>
           </div>
@@ -854,11 +862,11 @@
 
               </div>
               <div class="col-xs-4 col-sm-4 col-md-4">
-              <p  class="subtitle">Temperature</p>
+              <p  class="subtitle">Temper</p>
                 <h3>  &nbsp;100&deg;C</h3>
                 </div>
                 <div class="col-xs-5 col-sm-5 col-md-5">
-                <p class="subtitle">Humidity</p>
+                <p class="subtitle">Humid</p>
                     <h3> &nbsp;100&permil;</h3>
                   </div>
           </div>
@@ -881,11 +889,11 @@
 
               </div>
               <div class="col-xs-4 col-sm-4 col-md-4">
-              <p  class="subtitle">Temperature</p>
+              <p  class="subtitle">Temper</p>
                 <h3>  &nbsp;100&deg;C</h3>
                 </div>
                 <div class="col-xs-5 col-sm-5 col-md-5">
-                <p class="subtitle">Humidity</p>
+                <p class="subtitle">Humid</p>
                     <h3> &nbsp;100&permil;</h3>
                   </div>
           </div>
@@ -957,11 +965,11 @@
 
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4">
-            <p  class="subtitle">Temperature</p>
+            <p  class="subtitle">Temper</p>
               <h3>  &nbsp;100&deg;C</h3>
               </div>
               <div class="col-xs-5 col-sm-5 col-md-5">
-              <p class="subtitle">Humidity</p>
+              <p class="subtitle">Humid</p>
                   <h3> &nbsp;100&permil;</h3>
                 </div>
         </div>
@@ -984,11 +992,11 @@
 
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4">
-            <p  class="subtitle">Temperature</p>
+            <p  class="subtitle">Temper</p>
               <h3>  &nbsp;100&deg;C</h3>
               </div>
               <div class="col-xs-5 col-sm-5 col-md-5">
-              <p class="subtitle">Humidity</p>
+              <p class="subtitle">Humid</p>
                   <h3> &nbsp;100&permil;</h3>
                 </div>
         </div>
@@ -1013,11 +1021,11 @@
 
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4">
-            <p  class="subtitle">Temperature</p>
+            <p  class="subtitle">Temper</p>
               <h3>  &nbsp;100&deg;C</h3>
               </div>
               <div class="col-xs-5 col-sm-5 col-md-5">
-              <p class="subtitle">Humidity</p>
+              <p class="subtitle">Humid</p>
                   <h3> &nbsp;100&permil;</h3>
                 </div>
         </div>
@@ -1042,11 +1050,11 @@
 
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4">
-            <p  class="subtitle">Temperature</p>
+            <p  class="subtitle">Temper</p>
               <h3>  &nbsp;100&deg;C</h3>
               </div>
               <div class="col-xs-5 col-sm-5 col-md-5">
-              <p class="subtitle">Humidity</p>
+              <p class="subtitle">Humid</p>
                   <h3> &nbsp;100&permil;</h3>
                 </div>
         </div>
@@ -1079,11 +1087,11 @@
 
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4">
-            <p  class="subtitle">Temperature</p>
+            <p  class="subtitle">Temper</p>
               <h3>  &nbsp;100&deg;C</h3>
               </div>
               <div class="col-xs-5 col-sm-5 col-md-5">
-              <p class="subtitle">Humidity</p>
+              <p class="subtitle">Humid</p>
                   <h3> &nbsp;100&permil;</h3>
                 </div>
         </div>
@@ -1106,11 +1114,11 @@
 
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4">
-            <p  class="subtitle">Temperature</p>
+            <p  class="subtitle">Temper</p>
               <h3>  &nbsp;100&deg;C</h3>
               </div>
               <div class="col-xs-5 col-sm-5 col-md-5">
-              <p class="subtitle">Humidity</p>
+              <p class="subtitle">Humid</p>
                   <h3> &nbsp;100&permil;</h3>
                 </div>
         </div>
@@ -1133,11 +1141,11 @@
 
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4">
-            <p  class="subtitle">Temperature</p>
+            <p  class="subtitle">Temper</p>
               <h3>  &nbsp;100&deg;C</h3>
               </div>
               <div class="col-xs-5 col-sm-5 col-md-5">
-              <p class="subtitle">Humidity</p>
+              <p class="subtitle">Humid</p>
                   <h3> &nbsp;100&permil;</h3>
                 </div>
         </div>
@@ -1160,11 +1168,11 @@
 
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4">
-            <p  class="subtitle">Temperature</p>
+            <p  class="subtitle">Temper</p>
               <h3>  &nbsp;100&deg;C</h3>
               </div>
               <div class="col-xs-5 col-sm-5 col-md-5">
-              <p class="subtitle">Humidity</p>
+              <p class="subtitle">Humid</p>
                   <h3> &nbsp;100&permil;</h3>
                 </div>
         </div>
@@ -1236,11 +1244,11 @@
 
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4">
-            <p  class="subtitle">Temperature</p>
+            <p  class="subtitle">Temper</p>
               <h3>  &nbsp;100&deg;C</h3>
               </div>
               <div class="col-xs-5 col-sm-5 col-md-5">
-              <p class="subtitle">Humidity</p>
+              <p class="subtitle">Humid</p>
                   <h3> &nbsp;100&permil;</h3>
                 </div>
         </div>
@@ -1263,11 +1271,11 @@
 
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4">
-            <p  class="subtitle">Temperature</p>
+            <p  class="subtitle">Temper</p>
               <h3>  &nbsp;100&deg;C</h3>
               </div>
               <div class="col-xs-5 col-sm-5 col-md-5">
-              <p class="subtitle">Humidity</p>
+              <p class="subtitle">Humid</p>
                   <h3> &nbsp;100&permil;</h3>
                 </div>
         </div>
@@ -1292,11 +1300,11 @@
 
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4">
-            <p  class="subtitle">Temperature</p>
+            <p  class="subtitle">Temper</p>
               <h3>  &nbsp;100&deg;C</h3>
               </div>
               <div class="col-xs-5 col-sm-5 col-md-5">
-              <p class="subtitle">Humidity</p>
+              <p class="subtitle">Humid</p>
                   <h3> &nbsp;100&permil;</h3>
                 </div>
         </div>
@@ -1321,11 +1329,11 @@
 
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4">
-            <p  class="subtitle">Temperature</p>
+            <p  class="subtitle">Temper</p>
               <h3>  &nbsp;100&deg;C</h3>
               </div>
               <div class="col-xs-5 col-sm-5 col-md-5">
-              <p class="subtitle">Humidity</p>
+              <p class="subtitle">Humid</p>
                   <h3> &nbsp;100&permil;</h3>
                 </div>
         </div>
@@ -1358,11 +1366,11 @@
 
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4">
-            <p  class="subtitle">Temperature</p>
+            <p  class="subtitle">Temper</p>
               <h3>  &nbsp;100&deg;C</h3>
               </div>
               <div class="col-xs-5 col-sm-5 col-md-5">
-              <p class="subtitle">Humidity</p>
+              <p class="subtitle">Humid</p>
                   <h3> &nbsp;100&permil;</h3>
                 </div>
         </div>
@@ -1385,11 +1393,11 @@
 
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4">
-            <p  class="subtitle">Temperature</p>
+            <p  class="subtitle">Temper</p>
               <h3>  &nbsp;100&deg;C</h3>
               </div>
               <div class="col-xs-5 col-sm-5 col-md-5">
-              <p class="subtitle">Humidity</p>
+              <p class="subtitle">Humid</p>
                   <h3> &nbsp;100&permil;</h3>
                 </div>
         </div>
@@ -1412,11 +1420,11 @@
 
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4">
-            <p  class="subtitle">Temperature</p>
+            <p  class="subtitle">Temper</p>
               <h3>  &nbsp;100&deg;C</h3>
               </div>
               <div class="col-xs-5 col-sm-5 col-md-5">
-              <p class="subtitle">Humidity</p>
+              <p class="subtitle">Humid</p>
                   <h3> &nbsp;100&permil;</h3>
                 </div>
         </div>
@@ -1439,11 +1447,11 @@
 
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4">
-            <p  class="subtitle">Temperature</p>
+            <p  class="subtitle">Temper</p>
               <h3>  &nbsp;100&deg;C</h3>
               </div>
               <div class="col-xs-5 col-sm-5 col-md-5">
-              <p class="subtitle">Humidity</p>
+              <p class="subtitle">Humid</p>
                   <h3> &nbsp;100&permil;</h3>
                 </div>
         </div>
@@ -1516,11 +1524,11 @@
 
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4">
-            <p  class="subtitle">Temperature</p>
+            <p  class="subtitle">Temper</p>
               <h3>  &nbsp;100&deg;C</h3>
               </div>
               <div class="col-xs-5 col-sm-5 col-md-5">
-              <p class="subtitle">Humidity</p>
+              <p class="subtitle">Humid</p>
                   <h3> &nbsp;100&permil;</h3>
                 </div>
         </div>
@@ -1543,11 +1551,11 @@
 
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4">
-            <p  class="subtitle">Temperature</p>
+            <p  class="subtitle">Temper</p>
               <h3>  &nbsp;100&deg;C</h3>
               </div>
               <div class="col-xs-5 col-sm-5 col-md-5">
-              <p class="subtitle">Humidity</p>
+              <p class="subtitle">Humid</p>
                   <h3> &nbsp;100&permil;</h3>
                 </div>
         </div>
@@ -1572,11 +1580,11 @@
 
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4">
-            <p  class="subtitle">Temperature</p>
+            <p  class="subtitle">Temper</p>
               <h3>  &nbsp;100&deg;C</h3>
               </div>
               <div class="col-xs-5 col-sm-5 col-md-5">
-              <p class="subtitle">Humidity</p>
+              <p class="subtitle">Humid</p>
                   <h3> &nbsp;100&permil;</h3>
                 </div>
         </div>
@@ -1601,11 +1609,11 @@
 
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4">
-            <p  class="subtitle">Temperature</p>
+            <p  class="subtitle">Temper</p>
               <h3>  &nbsp;100&deg;C</h3>
               </div>
               <div class="col-xs-5 col-sm-5 col-md-5">
-              <p class="subtitle">Humidity</p>
+              <p class="subtitle">Humid</p>
                   <h3> &nbsp;100&permil;</h3>
                 </div>
         </div>
@@ -1638,11 +1646,11 @@
 
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4">
-            <p  class="subtitle">Temperature</p>
+            <p  class="subtitle">Temper</p>
               <h3>  &nbsp;100&deg;C</h3>
               </div>
               <div class="col-xs-5 col-sm-5 col-md-5">
-              <p class="subtitle">Humidity</p>
+              <p class="subtitle">Humid</p>
                   <h3> &nbsp;100&permil;</h3>
                 </div>
         </div>
@@ -1665,11 +1673,11 @@
 
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4">
-            <p  class="subtitle">Temperature</p>
+            <p  class="subtitle">Temper</p>
               <h3>  &nbsp;100&deg;C</h3>
               </div>
               <div class="col-xs-5 col-sm-5 col-md-5">
-              <p class="subtitle">Humidity</p>
+              <p class="subtitle">Humid</p>
                   <h3> &nbsp;100&permil;</h3>
                 </div>
         </div>
@@ -1692,11 +1700,11 @@
 
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4">
-            <p  class="subtitle">Temperature</p>
+            <p  class="subtitle">Temper</p>
               <h3>  &nbsp;100&deg;C</h3>
               </div>
               <div class="col-xs-5 col-sm-5 col-md-5">
-              <p class="subtitle">Humidity</p>
+              <p class="subtitle">Humid</p>
                   <h3> &nbsp;100&permil;</h3>
                 </div>
         </div>
@@ -1719,11 +1727,11 @@
 
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4">
-            <p  class="subtitle">Temperature</p>
+            <p  class="subtitle">Temper</p>
               <h3>  &nbsp;100&deg;C</h3>
               </div>
               <div class="col-xs-5 col-sm-5 col-md-5">
-              <p class="subtitle">Humidity</p>
+              <p class="subtitle">Humid</p>
                   <h3> &nbsp;100&permil;</h3>
                 </div>
         </div>
@@ -1795,11 +1803,11 @@
 
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4">
-            <p  class="subtitle">Temperature</p>
+            <p  class="subtitle">Temper</p>
               <h3>  &nbsp;100&deg;C</h3>
               </div>
               <div class="col-xs-5 col-sm-5 col-md-5">
-              <p class="subtitle">Humidity</p>
+              <p class="subtitle">Humid</p>
                   <h3> &nbsp;100&permil;</h3>
                 </div>
         </div>
@@ -1822,11 +1830,11 @@
 
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4">
-            <p  class="subtitle">Temperature</p>
+            <p  class="subtitle">Temper</p>
               <h3>  &nbsp;100&deg;C</h3>
               </div>
               <div class="col-xs-5 col-sm-5 col-md-5">
-              <p class="subtitle">Humidity</p>
+              <p class="subtitle">Humid</p>
                   <h3> &nbsp;100&permil;</h3>
                 </div>
         </div>
@@ -1851,11 +1859,11 @@
 
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4">
-            <p  class="subtitle">Temperature</p>
+            <p  class="subtitle">Temper</p>
               <h3>  &nbsp;100&deg;C</h3>
               </div>
               <div class="col-xs-5 col-sm-5 col-md-5">
-              <p class="subtitle">Humidity</p>
+              <p class="subtitle">Humid</p>
                   <h3> &nbsp;100&permil;</h3>
                 </div>
         </div>
@@ -1880,11 +1888,11 @@
 
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4">
-            <p  class="subtitle">Temperature</p>
+            <p  class="subtitle">Temper</p>
               <h3>  &nbsp;100&deg;C</h3>
               </div>
               <div class="col-xs-5 col-sm-5 col-md-5">
-              <p class="subtitle">Humidity</p>
+              <p class="subtitle">Humid</p>
                   <h3> &nbsp;100&permil;</h3>
                 </div>
         </div>
@@ -1917,11 +1925,11 @@
 
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4">
-            <p  class="subtitle">Temperature</p>
+            <p  class="subtitle">Temper</p>
               <h3>  &nbsp;100&deg;C</h3>
               </div>
               <div class="col-xs-5 col-sm-5 col-md-5">
-              <p class="subtitle">Humidity</p>
+              <p class="subtitle">Humid</p>
                   <h3> &nbsp;100&permil;</h3>
                 </div>
         </div>
@@ -1944,11 +1952,11 @@
 
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4">
-            <p  class="subtitle">Temperature</p>
+            <p  class="subtitle">Temper</p>
               <h3>  &nbsp;100&deg;C</h3>
               </div>
               <div class="col-xs-5 col-sm-5 col-md-5">
-              <p class="subtitle">Humidity</p>
+              <p class="subtitle">Humid</p>
                   <h3> &nbsp;100&permil;</h3>
                 </div>
         </div>
@@ -1971,11 +1979,11 @@
 
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4">
-            <p  class="subtitle">Temperature</p>
+            <p  class="subtitle">Temper</p>
               <h3>  &nbsp;100&deg;C</h3>
               </div>
               <div class="col-xs-5 col-sm-5 col-md-5">
-              <p class="subtitle">Humidity</p>
+              <p class="subtitle">Humid</p>
                   <h3> &nbsp;100&permil;</h3>
                 </div>
         </div>
@@ -1998,11 +2006,11 @@
 
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4">
-            <p  class="subtitle">Temperature</p>
+            <p  class="subtitle">Temper</p>
               <h3>  &nbsp;100&deg;C</h3>
               </div>
               <div class="col-xs-5 col-sm-5 col-md-5">
-              <p class="subtitle">Humidity</p>
+              <p class="subtitle">Humid</p>
                   <h3> &nbsp;100&permil;</h3>
                 </div>
         </div>
@@ -2075,11 +2083,11 @@
 
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4">
-            <p  class="subtitle">Temperature</p>
+            <p  class="subtitle">Temper</p>
               <h3>  &nbsp;100&deg;C</h3>
               </div>
               <div class="col-xs-5 col-sm-5 col-md-5">
-              <p class="subtitle">Humidity</p>
+              <p class="subtitle">Humid</p>
                   <h3> &nbsp;100&permil;</h3>
                 </div>
         </div>
@@ -2102,11 +2110,11 @@
 
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4">
-            <p  class="subtitle">Temperature</p>
+            <p  class="subtitle">Temper</p>
               <h3>  &nbsp;100&deg;C</h3>
               </div>
               <div class="col-xs-5 col-sm-5 col-md-5">
-              <p class="subtitle">Humidity</p>
+              <p class="subtitle">Humid</p>
                   <h3> &nbsp;100&permil;</h3>
                 </div>
         </div>
@@ -2131,11 +2139,11 @@
 
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4">
-            <p  class="subtitle">Temperature</p>
+            <p  class="subtitle">Temper</p>
               <h3>  &nbsp;100&deg;C</h3>
               </div>
               <div class="col-xs-5 col-sm-5 col-md-5">
-              <p class="subtitle">Humidity</p>
+              <p class="subtitle">Humid</p>
                   <h3> &nbsp;100&permil;</h3>
                 </div>
         </div>
@@ -2160,11 +2168,11 @@
 
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4">
-            <p  class="subtitle">Temperature</p>
+            <p  class="subtitle">Temper</p>
               <h3>  &nbsp;100&deg;C</h3>
               </div>
               <div class="col-xs-5 col-sm-5 col-md-5">
-              <p class="subtitle">Humidity</p>
+              <p class="subtitle">Humid</p>
                   <h3> &nbsp;100&permil;</h3>
                 </div>
         </div>
@@ -2197,11 +2205,11 @@
 
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4">
-            <p  class="subtitle">Temperature</p>
+            <p  class="subtitle">Temper</p>
               <h3>  &nbsp;100&deg;C</h3>
               </div>
               <div class="col-xs-5 col-sm-5 col-md-5">
-              <p class="subtitle">Humidity</p>
+              <p class="subtitle">Humid</p>
                   <h3> &nbsp;100&permil;</h3>
                 </div>
         </div>
@@ -2224,11 +2232,11 @@
 
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4">
-            <p  class="subtitle">Temperature</p>
+            <p  class="subtitle">Temper</p>
               <h3>  &nbsp;100&deg;C</h3>
               </div>
               <div class="col-xs-5 col-sm-5 col-md-5">
-              <p class="subtitle">Humidity</p>
+              <p class="subtitle">Humid</p>
                   <h3> &nbsp;100&permil;</h3>
                 </div>
         </div>
@@ -2251,11 +2259,11 @@
 
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4">
-            <p  class="subtitle">Temperature</p>
+            <p  class="subtitle">Temper</p>
               <h3>  &nbsp;100&deg;C</h3>
               </div>
               <div class="col-xs-5 col-sm-5 col-md-5">
-              <p class="subtitle">Humidity</p>
+              <p class="subtitle">Humid</p>
                   <h3> &nbsp;100&permil;</h3>
                 </div>
         </div>
@@ -2278,11 +2286,11 @@
 
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4">
-            <p  class="subtitle">Temperature</p>
+            <p  class="subtitle">Temper</p>
               <h3>  &nbsp;100&deg;C</h3>
               </div>
               <div class="col-xs-5 col-sm-5 col-md-5">
-              <p class="subtitle">Humidity</p>
+              <p class="subtitle">Humid</p>
                   <h3> &nbsp;100&permil;</h3>
                 </div>
         </div>
@@ -2355,11 +2363,11 @@
 
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4">
-            <p  class="subtitle">Temperature</p>
+            <p  class="subtitle">Temper</p>
               <h3>  &nbsp;100&deg;C</h3>
               </div>
               <div class="col-xs-5 col-sm-5 col-md-5">
-              <p class="subtitle">Humidity</p>
+              <p class="subtitle">Humid</p>
                   <h3> &nbsp;100&permil;</h3>
                 </div>
         </div>
@@ -2382,11 +2390,11 @@
 
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4">
-            <p  class="subtitle">Temperature</p>
+            <p  class="subtitle">Temper</p>
               <h3>  &nbsp;100&deg;C</h3>
               </div>
               <div class="col-xs-5 col-sm-5 col-md-5">
-              <p class="subtitle">Humidity</p>
+              <p class="subtitle">Humid</p>
                   <h3> &nbsp;100&permil;</h3>
                 </div>
         </div>
@@ -2411,11 +2419,11 @@
 
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4">
-            <p  class="subtitle">Temperature</p>
+            <p  class="subtitle">Temper</p>
               <h3>  &nbsp;100&deg;C</h3>
               </div>
               <div class="col-xs-5 col-sm-5 col-md-5">
-              <p class="subtitle">Humidity</p>
+              <p class="subtitle">Humid</p>
                   <h3> &nbsp;100&permil;</h3>
                 </div>
         </div>
@@ -2440,11 +2448,11 @@
 
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4">
-            <p  class="subtitle">Temperature</p>
+            <p  class="subtitle">Temper</p>
               <h3>  &nbsp;100&deg;C</h3>
               </div>
               <div class="col-xs-5 col-sm-5 col-md-5">
-              <p class="subtitle">Humidity</p>
+              <p class="subtitle">Humid</p>
                   <h3> &nbsp;100&permil;</h3>
                 </div>
         </div>
@@ -2477,11 +2485,11 @@
 
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4">
-            <p  class="subtitle">Temperature</p>
+            <p  class="subtitle">Temper</p>
               <h3>  &nbsp;100&deg;C</h3>
               </div>
               <div class="col-xs-5 col-sm-5 col-md-5">
-              <p class="subtitle">Humidity</p>
+              <p class="subtitle">Humid</p>
                   <h3> &nbsp;100&permil;</h3>
                 </div>
         </div>
@@ -2504,11 +2512,11 @@
 
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4">
-            <p  class="subtitle">Temperature</p>
+            <p  class="subtitle">Temper</p>
               <h3>  &nbsp;100&deg;C</h3>
               </div>
               <div class="col-xs-5 col-sm-5 col-md-5">
-              <p class="subtitle">Humidity</p>
+              <p class="subtitle">Humid</p>
                   <h3> &nbsp;100&permil;</h3>
                 </div>
         </div>
@@ -2531,11 +2539,11 @@
 
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4">
-            <p  class="subtitle">Temperature</p>
+            <p  class="subtitle">Temper</p>
               <h3>  &nbsp;100&deg;C</h3>
               </div>
               <div class="col-xs-5 col-sm-5 col-md-5">
-              <p class="subtitle">Humidity</p>
+              <p class="subtitle">Humid</p>
                   <h3> &nbsp;100&permil;</h3>
                 </div>
         </div>
@@ -2558,11 +2566,11 @@
 
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4">
-            <p  class="subtitle">Temperature</p>
+            <p  class="subtitle">Temper</p>
               <h3>  &nbsp;100&deg;C</h3>
               </div>
               <div class="col-xs-5 col-sm-5 col-md-5">
-              <p class="subtitle">Humidity</p>
+              <p class="subtitle">Humid</p>
                   <h3> &nbsp;100&permil;</h3>
                 </div>
         </div>
@@ -2635,11 +2643,11 @@
 
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4">
-            <p  class="subtitle">Temperature</p>
+            <p  class="subtitle">Temper</p>
               <h3>  &nbsp;100&deg;C</h3>
               </div>
               <div class="col-xs-5 col-sm-5 col-md-5">
-              <p class="subtitle">Humidity</p>
+              <p class="subtitle">Humid</p>
                   <h3> &nbsp;100&permil;</h3>
                 </div>
         </div>
@@ -2662,11 +2670,11 @@
 
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4">
-            <p  class="subtitle">Temperature</p>
+            <p  class="subtitle">Temper</p>
               <h3>  &nbsp;100&deg;C</h3>
               </div>
               <div class="col-xs-5 col-sm-5 col-md-5">
-              <p class="subtitle">Humidity</p>
+              <p class="subtitle">Humid</p>
                   <h3> &nbsp;100&permil;</h3>
                 </div>
         </div>
@@ -2691,11 +2699,11 @@
 
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4">
-            <p  class="subtitle">Temperature</p>
+            <p  class="subtitle">Temper</p>
               <h3>  &nbsp;100&deg;C</h3>
               </div>
               <div class="col-xs-5 col-sm-5 col-md-5">
-              <p class="subtitle">Humidity</p>
+              <p class="subtitle">Humid</p>
                   <h3> &nbsp;100&permil;</h3>
                 </div>
         </div>
@@ -2720,11 +2728,11 @@
 
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4">
-            <p  class="subtitle">Temperature</p>
+            <p  class="subtitle">Temper</p>
               <h3>  &nbsp;100&deg;C</h3>
               </div>
               <div class="col-xs-5 col-sm-5 col-md-5">
-              <p class="subtitle">Humidity</p>
+              <p class="subtitle">Humid</p>
                   <h3> &nbsp;100&permil;</h3>
                 </div>
         </div>
@@ -2757,11 +2765,11 @@
 
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4">
-            <p  class="subtitle">Temperature</p>
+            <p  class="subtitle">Temper</p>
               <h3>  &nbsp;100&deg;C</h3>
               </div>
               <div class="col-xs-5 col-sm-5 col-md-5">
-              <p class="subtitle">Humidity</p>
+              <p class="subtitle">Humid</p>
                   <h3> &nbsp;100&permil;</h3>
                 </div>
         </div>
@@ -2784,11 +2792,11 @@
 
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4">
-            <p  class="subtitle">Temperature</p>
+            <p  class="subtitle">Temper</p>
               <h3>  &nbsp;100&deg;C</h3>
               </div>
               <div class="col-xs-5 col-sm-5 col-md-5">
-              <p class="subtitle">Humidity</p>
+              <p class="subtitle">Humid</p>
                   <h3> &nbsp;100&permil;</h3>
                 </div>
         </div>
@@ -2811,11 +2819,11 @@
 
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4">
-            <p  class="subtitle">Temperature</p>
+            <p  class="subtitle">Temper</p>
               <h3>  &nbsp;100&deg;C</h3>
               </div>
               <div class="col-xs-5 col-sm-5 col-md-5">
-              <p class="subtitle">Humidity</p>
+              <p class="subtitle">Humid</p>
                   <h3> &nbsp;100&permil;</h3>
                 </div>
         </div>
@@ -2838,11 +2846,11 @@
 
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4">
-            <p  class="subtitle">Temperature</p>
+            <p  class="subtitle">Temper</p>
               <h3>  &nbsp;100&deg;C</h3>
               </div>
               <div class="col-xs-5 col-sm-5 col-md-5">
-              <p class="subtitle">Humidity</p>
+              <p class="subtitle">Humid</p>
                   <h3> &nbsp;100&permil;</h3>
                 </div>
         </div>
@@ -2914,11 +2922,11 @@
 
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4">
-            <p  class="subtitle">Temperature</p>
+            <p  class="subtitle">Temper</p>
               <h3>  &nbsp;100&deg;C</h3>
               </div>
               <div class="col-xs-5 col-sm-5 col-md-5">
-              <p class="subtitle">Humidity</p>
+              <p class="subtitle">Humid</p>
                   <h3> &nbsp;100&permil;</h3>
                 </div>
         </div>
@@ -2941,11 +2949,11 @@
 
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4">
-            <p  class="subtitle">Temperature</p>
+            <p  class="subtitle">Temper</p>
               <h3>  &nbsp;100&deg;C</h3>
               </div>
               <div class="col-xs-5 col-sm-5 col-md-5">
-              <p class="subtitle">Humidity</p>
+              <p class="subtitle">Humid</p>
                   <h3> &nbsp;100&permil;</h3>
                 </div>
         </div>
@@ -2970,11 +2978,11 @@
 
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4">
-            <p  class="subtitle">Temperature</p>
+            <p  class="subtitle">Temper</p>
               <h3>  &nbsp;100&deg;C</h3>
               </div>
               <div class="col-xs-5 col-sm-5 col-md-5">
-              <p class="subtitle">Humidity</p>
+              <p class="subtitle">Humid</p>
                   <h3> &nbsp;100&permil;</h3>
                 </div>
         </div>
@@ -2999,11 +3007,11 @@
 
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4">
-            <p  class="subtitle">Temperature</p>
+            <p  class="subtitle">Temper</p>
               <h3>  &nbsp;100&deg;C</h3>
               </div>
               <div class="col-xs-5 col-sm-5 col-md-5">
-              <p class="subtitle">Humidity</p>
+              <p class="subtitle">Humid</p>
                   <h3> &nbsp;100&permil;</h3>
                 </div>
         </div>
@@ -3036,11 +3044,11 @@
 
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4">
-            <p  class="subtitle">Temperature</p>
+            <p  class="subtitle">Temper</p>
               <h3>  &nbsp;100&deg;C</h3>
               </div>
               <div class="col-xs-5 col-sm-5 col-md-5">
-              <p class="subtitle">Humidity</p>
+              <p class="subtitle">Humid</p>
                   <h3> &nbsp;100&permil;</h3>
                 </div>
         </div>
@@ -3063,11 +3071,11 @@
 
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4">
-            <p  class="subtitle">Temperature</p>
+            <p  class="subtitle">Temper</p>
               <h3>  &nbsp;100&deg;C</h3>
               </div>
               <div class="col-xs-5 col-sm-5 col-md-5">
-              <p class="subtitle">Humidity</p>
+              <p class="subtitle">Humid</p>
                   <h3> &nbsp;100&permil;</h3>
                 </div>
         </div>
@@ -3090,11 +3098,11 @@
 
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4">
-            <p  class="subtitle">Temperature</p>
+            <p  class="subtitle">Temper</p>
               <h3>  &nbsp;100&deg;C</h3>
               </div>
               <div class="col-xs-5 col-sm-5 col-md-5">
-              <p class="subtitle">Humidity</p>
+              <p class="subtitle">Humid</p>
                   <h3> &nbsp;100&permil;</h3>
                 </div>
         </div>
@@ -3117,11 +3125,11 @@
 
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4">
-            <p  class="subtitle">Temperature</p>
+            <p  class="subtitle">Temper</p>
               <h3>  &nbsp;100&deg;C</h3>
               </div>
               <div class="col-xs-5 col-sm-5 col-md-5">
-              <p class="subtitle">Humidity</p>
+              <p class="subtitle">Humid</p>
                   <h3> &nbsp;100&permil;</h3>
                 </div>
         </div>
@@ -3193,11 +3201,11 @@
 
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4">
-            <p  class="subtitle">Temperature</p>
+            <p  class="subtitle">Temper</p>
               <h3>  &nbsp;100&deg;C</h3>
               </div>
               <div class="col-xs-5 col-sm-5 col-md-5">
-              <p class="subtitle">Humidity</p>
+              <p class="subtitle">Humid</p>
                   <h3> &nbsp;100&permil;</h3>
                 </div>
         </div>
@@ -3220,11 +3228,11 @@
 
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4">
-            <p  class="subtitle">Temperature</p>
+            <p  class="subtitle">Temper</p>
               <h3>  &nbsp;100&deg;C</h3>
               </div>
               <div class="col-xs-5 col-sm-5 col-md-5">
-              <p class="subtitle">Humidity</p>
+              <p class="subtitle">Humid</p>
                   <h3> &nbsp;100&permil;</h3>
                 </div>
         </div>
@@ -3249,11 +3257,11 @@
 
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4">
-            <p  class="subtitle">Temperature</p>
+            <p  class="subtitle">Temper</p>
               <h3>  &nbsp;100&deg;C</h3>
               </div>
               <div class="col-xs-5 col-sm-5 col-md-5">
-              <p class="subtitle">Humidity</p>
+              <p class="subtitle">Humid</p>
                   <h3> &nbsp;100&permil;</h3>
                 </div>
         </div>
@@ -3278,11 +3286,11 @@
 
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4">
-            <p  class="subtitle">Temperature</p>
+            <p  class="subtitle">Temper</p>
               <h3>  &nbsp;100&deg;C</h3>
               </div>
               <div class="col-xs-5 col-sm-5 col-md-5">
-              <p class="subtitle">Humidity</p>
+              <p class="subtitle">Humid</p>
                   <h3> &nbsp;100&permil;</h3>
                 </div>
         </div>
@@ -3315,11 +3323,11 @@
 
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4">
-            <p  class="subtitle">Temperature</p>
+            <p  class="subtitle">Temper</p>
               <h3>  &nbsp;100&deg;C</h3>
               </div>
               <div class="col-xs-5 col-sm-5 col-md-5">
-              <p class="subtitle">Humidity</p>
+              <p class="subtitle">Humid</p>
                   <h3> &nbsp;100&permil;</h3>
                 </div>
         </div>
@@ -3342,11 +3350,11 @@
 
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4">
-            <p  class="subtitle">Temperature</p>
+            <p  class="subtitle">Temper</p>
               <h3>  &nbsp;100&deg;C</h3>
               </div>
               <div class="col-xs-5 col-sm-5 col-md-5">
-              <p class="subtitle">Humidity</p>
+              <p class="subtitle">Humid</p>
                   <h3> &nbsp;100&permil;</h3>
                 </div>
         </div>
@@ -3369,11 +3377,11 @@
 
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4">
-            <p  class="subtitle">Temperature</p>
+            <p  class="subtitle">Temper</p>
               <h3>  &nbsp;100&deg;C</h3>
               </div>
               <div class="col-xs-5 col-sm-5 col-md-5">
-              <p class="subtitle">Humidity</p>
+              <p class="subtitle">Humid</p>
                   <h3> &nbsp;100&permil;</h3>
                 </div>
         </div>
@@ -3396,11 +3404,11 @@
 
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4">
-            <p  class="subtitle">Temperature</p>
+            <p  class="subtitle">Temper</p>
               <h3>  &nbsp;100&deg;C</h3>
               </div>
               <div class="col-xs-5 col-sm-5 col-md-5">
-              <p class="subtitle">Humidity</p>
+              <p class="subtitle">Humid</p>
                 <h3> &nbsp;<%= list.rows[0].rssi %>&permil;</h3>
                 </div>
         </div>
