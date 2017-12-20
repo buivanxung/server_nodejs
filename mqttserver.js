@@ -1,7 +1,6 @@
 /////////////////////Website////////////////
 var express = require('express');
 var app = express();
-var nodeExcel = require('excel-export');
 app.use(express.static('app/public'));
 app.set('views', __dirname + '/app/server/views');
 app.set('view engine', 'ejs');

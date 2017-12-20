@@ -1,20 +1,13 @@
+
+
 // host = '172.16.153.122';	// hostname or IP address
-host = '54.212.193.26';	// hostname or IP address
-// host = '172.16.153.110';	// hostname or IP address
+host = '18.217.3.199';	// hostname or IP address
 port = 8086;
 topic = '#';		// topic to subscribe to
 useTLS = false;
 username = null;
 password = null;
-// username = "jjolie";
-// password = "aa";
 
-// path as in "scheme:[//[user:password@]host[:port]][/]path[?query][#fragment]"
-//    defaults to "/mqtt"
-//    may include query and fragment
-//
-// path = "/mqtt";
-// path = "/data/cloud?device=12345";
 var mqtt;
 var reconnectTimeout = 2000;
 
@@ -34,6 +27,7 @@ mqtt = new Paho.MQTT.Client(
         cleanSession: cleansession,
         onSuccess: onConnect,
         onFailure: function (message) {
+          //message.errorMessage
             $('#status').val("Connection failed: " + message.errorMessage + "Retrying");
             setTimeout(MQTTconnect, reconnectTimeout);
         }
@@ -51,23 +45,33 @@ mqtt = new Paho.MQTT.Client(
 }
 
 function onConnect() {
-    $('#status').val('Connected to ' + host + ':' + port + path);
+    $('#status').val('Connected to Server!');
     // Connection succeeded; subscribe to our topic
     mqtt.subscribe(topic, {qos: 0});
     $('#topic').val(topic);
 }
 
+
 function onConnectionLost(response) {
     setTimeout(MQTTconnect, reconnectTimeout);
-    $('#status').val("connection lost: " + responseObject.errorMessage + ". Reconnecting");
+    $('#status').val("connection lost: " + response.errorMessage + ". Reconnecting");
 
 };
+function b64DecodeUnicode(str) {
+    // Going backwards: from bytestream, to percent-encoding, to original string.
+    return decodeURIComponent(atob(str).split('').map(function(c) {
+        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+    }).join(''));
+}
 
 function onMessageArrived(message) {
 
     var topic = message.destinationName;
     var payload = message.payloadString;
-
+    var parse_data = JSON.parse(payload);
+    var phyPayload1 = b64DecodeUnicode(parse_data.data);
+    //var buf = new Buffer(phyPayload1,'base64');
+    //var payload2 = buf.toString();
     $('#ws').prepend('<li>' + topic + ' = ' + payload + '</li>');
 };
 
