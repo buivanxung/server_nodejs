@@ -41,6 +41,11 @@ if (app.get('env') == 'live'){
 	dbURL = 'mongodb://'+process.env.DB_USER+':'+process.env.DB_PASS+'@'+dbHost+':'+dbPort+'/'+dbName;
 }
 
+//
+var urlencodedParser = bodyParser.urlencoded({ extended: false })
+////////////////////////////////////////////
+//
+
 app.use(session({
 	secret: 'faeb4453e5d14fe6f6d04637f78077c76c73d1b4',
 	proxy: true,
@@ -52,4 +57,4 @@ app.use(session({
 
 require('./app/server/routes')(app);
 
-http.createServer(app).listen(8082);
+http.createServer(app).listen(8089);
