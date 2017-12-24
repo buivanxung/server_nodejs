@@ -251,7 +251,9 @@ module.exports = function(app) {
 	        return console.error('error happened during query', err)
 	      }
 	      //  console.log( " Gia tri muon in: " + result.rows[0]);
-	        res.render("showdata.ejs",{list:result});
+	            res.render("showdata.ejs",{list:result});
+              //res.render("analyze.ejs",{list:result});
+              //console.log(result);
 	  });
 
 	  });
@@ -272,6 +274,32 @@ module.exports = function(app) {
 	     });
 	   });
 	 });
+
+  app.get("/chartdata", function(req,res){
+    pool.connect(function (err, client, done) {
+      if (err) {
+        return console.error('error fetching client from pool', err);
+      }
+      client.query('SELECT device_name, temperature, created_at FROM lora_imst WHERE application_id=1', function (err, r_temperature_1){
+        done();
+        if (err) {
+          res.end();
+          return console.error('error data query',err);
+        }
+        console.log(r_temperature_1)
+        res.render("analyze.ejs",{temp_1:r_temperature_1});
+      });
+      client.query('SELECT humidity FROM lora_imst WHERE application_id=1', function (err, r_humidity_1){
+        done();
+        if (err) {
+          res.end();
+          return console.error('error data query',err);
+        }
+        res.render("analyze.ejs",{humid_1:r_humidity_1});
+      });
+    });
+  });
+
 	 function getdata( a, data) {
 	   //console.log(dot.pick(a,data));
 	   return dot.pick( a,data);
