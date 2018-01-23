@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    	<title>Show Data Realtime</title>
+    	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+      <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+	    <link href="css/animate.css" rel="stylesheet" />
+    <!-- Squad theme CSS -->
+      <link href="css/style_home.css" rel="stylesheet">
+	    <link href="color/default.css" rel="stylesheet">
+      <link href="build/c3.css" rel="stylesheet">
+      <script src="build/d3.v3.min.js" charset="utf-8"></script>
+      <script src="build/c3.js"></script>
+  <style>
+     ul.nav-pills {
+         top: 50px;
+         position: fixed;
+         background-color: #f1f1f1;
+     }
+  </style>
+ </head>
+
+  <body>
+    <nav class="navbar navbar-custom navbar-fixed-bottom nav-pills" role="navigation" style="background:#23434">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="index.html">
+                  <!--  <h1>LoRa Management Device</h1> -->
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+	    <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+	      <ul class="nav nav-pills nav-stacked">
+       		<li><a href="#">Back</a></li>
+        	<li class= "active"> <a href="#intro"> Floor 1</a></li>
+        	<li><a href="#Floor2">Floor 2</a></li>
+        	<li><a href="#Floor3">Floor 3</a></li>
+        	<li><a href="#Floor4">Floor 4</a></li>
+		    </u>
+	    </div>
+    </div>
+  </nav>
+  <section id = "#" class="home-section text-center">
+    <div class="heading-about">
+      <div class="container">
+      <div class="row"
+          <div class="col-xs-2 col-sm-14">
+            <h4> Chart Temperature</h4>
+            <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+            <h3> Chart Humidity</h3>
+            <div id="chartContainer2" style="height: 300px; width: 100%;"></div>
+          <!-- fresh -->
+          <script>
+          window.onload = function () {
+
+          var chart1 = new CanvasJS.Chart("chartContainer", {
+          	theme:"light2",
+          	animationEnabled: true,
+          	title:{
+          		text: "Temperature"
+          	},
+          	axisY :{
+          		includeZero: false,
+          		title: "Fahrenheit",
+          		suffix: "F"
+          	},
+          	toolTip: {
+          		shared: "true"
+          	},
+          	legend:{
+          		cursor:"pointer",
+          		itemclick : toggleDataSeries
+          	},
+          	data: [{
+          		type: "spline",
+          		visible: true,
+          		showInLegend: true,
+          		yValueFormatString: "##.00 F",
+          		name: "Node 1",
+          		dataPoints: [
+               <% listN1.rows.forEach(function(dl) { %>
+               <%= "{ y: "+dl.temperature+" }," %>
+               <% }); %>
+          		]
+          	},
+          	{
+          		type: "spline",
+          		showInLegend: true,
+          		visible: true,
+          		yValueFormatString: "##.00 F",
+          		name: "Node 2",
+              dataPoints: [
+                <% listN2.rows.forEach(function(dl) { %>
+                <%= "{ y: "+dl.temperature+" }," %>
+                <% }); %>
+              ]
+          	},
+            {
+              type: "spline",
+              showInLegend: true,
+              visible: true,
+              yValueFormatString: "##.00 F",
+              name: "Node 3",
+              dataPoints: [
+                <% listN3.rows.forEach(function(dl) { %>
+                <%= "{ y: "+dl.temperature+" }," %>
+                <% }); %>
+              ]
+            },
+            {
+              type: "spline",
+              showInLegend: true,
+              visible: true,
+              yValueFormatString: "##.00 F",
+              name: "Node 4",
+              dataPoints: [
+                <% listN4.rows.forEach(function(dl) { %>
+                <%= "{ y: "+dl.temperature+" }," %>
+                <% }); %>
+              ]
+            },
+          	{
+          		type: "spline",
+          		showInLegend: true,
+          		yValueFormatString: "##.00 F",
+          		name: "Node 5",
+          		dataPoints: [
+                <% listN5.rows.forEach(function(dl) { %>
+                <%= "{ y: "+dl.temperature+" }," %>
+                <% }); %>
+          		]
+          	}]
+          });
+          //---------------------------------------------
+        var chart2 = new CanvasJS.Chart("chartContainer2", {
+                    theme:"light2",
+                    animationEnabled: true,
+                    title:{
+                      text: "Humidity"
+                    },
+                    axisY :{
+                      includeZero: false,
+                      title: "%",
+                      suffix: "%"
+                    },
+                    toolTip: {
+                      shared: "true"
+                    },
+                    legend:{
+                      cursor:"pointer",
+                      itemclick : toggleDataSeries
+                    },
+                    data: [{
+                      type: "spline",
+                      visible: true,
+                      showInLegend: true,
+                      yValueFormatString: "##.00",
+                      name: "Node 1",
+                      dataPoints: [
+                       <% listN1.rows.forEach(function(dl) { %>
+                       <%= "{ y: "+dl.humidity+" }," %>
+                       <% }); %>
+                      ]
+                    },
+                    {
+                      type: "spline",
+                      showInLegend: true,
+                      visible: true,
+                      yValueFormatString: "##.00",
+                      name: "Node 2",
+                      dataPoints: [
+                        <% listN2.rows.forEach(function(dl) { %>
+                        <%= "{ y: "+dl.humidity+" }," %>
+                        <% }); %>
+                      ]
+                    },
+                    {
+                      type: "spline",
+                      showInLegend: true,
+                      visible: true,
+                      yValueFormatString: "##.00",
+                      name: "Node 3",
+                      dataPoints: [
+                        <% listN3.rows.forEach(function(dl) { %>
+                        <%= "{ y: "+dl.humidity+" }," %>
+                        <% }); %>
+                      ]
+                    },
+                    {
+                      type: "spline",
+                      showInLegend: true,
+                      visible: true,
+                      yValueFormatString: "##.00",
+                      name: "Node 4",
+                      dataPoints: [
+                        <% listN4.rows.forEach(function(dl) { %>
+                        <%= "{ y: "+dl.humidity+" }," %>
+                        <% }); %>
+                      ]
+                    },
+                    {
+                      type: "spline",
+                      showInLegend: true,
+                      yValueFormatString: "##.00",
+                      name: "Node 5",
+                      dataPoints: [
+                        <% listN5.rows.forEach(function(dl) { %>
+                        <%= "{ y: "+dl.humidity+" }," %>
+                        <% }); %>
+                      ]
+                    }]
+                  });
+
+          chart1.render();
+          chart2.render();
+          function toggleDataSeries(e) {
+          	if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible ){
+          		e.dataSeries.visible = false;
+          	} else {
+          		e.dataSeries.visible = true;
+          	}
+            chart1.render();
+            chart2.render();
+          }
+
+          }
+          </script>
+          <!-- -->
+
+        <!-- fresh -->
+
+        <!-- -->
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

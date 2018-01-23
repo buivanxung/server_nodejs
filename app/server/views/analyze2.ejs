@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    	<title>Show Data Realtime</title>
+    	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+      <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+	    <link href="css/animate.css" rel="stylesheet" />
+    <!-- Squad theme CSS -->
+      <link href="css/style_home.css" rel="stylesheet">
+	    <link href="color/default.css" rel="stylesheet">
+  <style>
+     ul.nav-pills {
+         top: 50px;
+         position: fixed;
+         background-color: #f1f1f1;
+     }
+  </style>
+ </head>
+
+  <body>
+    <nav class="navbar navbar-custom navbar-fixed-bottom nav-pills" role="navigation" style="background:#23434">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="index.html">
+                  <!--  <h1>LoRa Management Device</h1> -->
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+	    <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+	      <ul class="nav nav-pills nav-stacked">
+       		<li><a href="#">Back</a></li>
+        	<li class= "active"> <a href="#synthetic"> Synthetic</a></li>
+          <li><a href="#floor1">Floor 1</a></li>
+        	<li><a href="#floor2">Floor 2</a></li>
+        	<li><a href="#floor3">Floor 3</a></li>
+        	<li><a href="#floor4">Floor 4</a></li>
+          <li><a href="#floor5">Floor 5</a></li>
+        	<li><a href="#floor6">Floor 6</a></li>
+        	<li><a href="#floor7">Floor 7</a></li>
+          <li><a href="#floor8">Floor 8</a></li>
+          <li><a href="#floor9">Floor 9</a></li>
+		    </u>
+	    </div>
+    </div>
+  </nav>
+  <section id = "synthetic" class="home-section text-center">
+    <div class="heading-about">
+      <div class="container">
+      <div class="row"
+          <div class="col-xs-2 col-sm-14">
+            <h4> Chart Temperature</h4>
+            <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+            <h3> Chart Humidity</h3>
+            <div id="chartContainer2" style="height: 300px; width: 100%;"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id = "floor1"  class="home-section text-center bg-gray" >
+    <div class="heading-about">
+      <div class="container">
+      <div class="row"
+          <div class="col-xs-2 col-sm-14">
+            <h4> Chart Temperature</h4>
+            <div id="chartContainer3" style="height: 300px; width: 100%;"></div>
+            <h3> Chart Humidity</h3>
+            <div id="chartContainer4" style="height: 300px; width: 100%;"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id = "floor2"  class="home-section text-center bg-gray" >
+    <div class="heading-about">
+      <div class="container">
+      <div class="row"
+          <div class="col-xs-2 col-sm-14">
+            <h4> Chart Temperature</h4>
+            <div id="chartContainer5" style="height: 300px; width: 100%;"></div>
+            <h3> Chart Humidity</h3>
+            <div id="chartContainer6" style="height: 300px; width: 100%;"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id = "floor3"  class="home-section text-center bg-gray" >
+    <div class="heading-about">
+      <div class="container">
+      <div class="row"
+          <div class="col-xs-2 col-sm-14">
+            <h4> Chart Temperature</h4>
+            <div id="chartContainer7" style="height: 300px; width: 100%;"></div>
+            <h3> Chart Humidity</h3>
+            <div id="chartContainer8" style="height: 300px; width: 100%;"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id = "floor4"  class="home-section text-center bg-gray" >
+    <div class="heading-about">
+      <div class="container">
+      <div class="row"
+          <div class="col-xs-2 col-sm-14">
+            <h4> Chart Temperature</h4>
+            <div id="chartContainer9" style="height: 300px; width: 100%;"></div>
+            <h3> Chart Humidity</h3>
+            <div id="chartContainer10" style="height: 300px; width: 100%;"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id = "floor5"  class="home-section text-center bg-gray" >
+    <div class="heading-about">
+      <div class="container">
+      <div class="row"
+          <div class="col-xs-2 col-sm-14">
+            <h4> Chart Temperature</h4>
+            <div id="chartContainer11" style="height: 300px; width: 100%;"></div>
+            <h3> Chart Humidity</h3>
+            <div id="chartContainer12" style="height: 300px; width: 100%;"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id = "floor6"  class="home-section text-center bg-gray" >
+    <div class="heading-about">
+      <div class="container">
+      <div class="row"
+          <div class="col-xs-2 col-sm-14">
+            <h4> Chart Temperature</h4>
+            <div id="chartContainer13" style="height: 300px; width: 100%;"></div>
+            <h3> Chart Humidity</h3>
+            <div id="chartContainer14" style="height: 300px; width: 100%;"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id = "floor7"  class="home-section text-center bg-gray" >
+    <div class="heading-about">
+      <div class="container">
+      <div class="row"
+          <div class="col-xs-2 col-sm-14">
+            <h4> Chart Temperature</h4>
+            <div id="chartContainer15" style="height: 300px; width: 100%;"></div>
+            <h3> Chart Humidity</h3>
+            <div id="chartContainer16" style="height: 300px; width: 100%;"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id = "floor8"  class="home-section text-center bg-gray" >
+    <div class="heading-about">
+      <div class="container">
+      <div class="row"
+          <div class="col-xs-2 col-sm-14">
+            <h4> Chart Temperature</h4>
+            <div id="chartContainer17" style="height: 300px; width: 100%;"></div>
+            <h3> Chart Humidity</h3>
+            <div id="chartContainer18" style="height: 300px; width: 100%;"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id = "floor9"  class="home-section text-center bg-gray" >
+    <div class="heading-about">
+      <div class="container">
+      <div class="row"
+          <div class="col-xs-2 col-sm-14">
+            <h4> Chart Temperature</h4>
+            <div id="chartContainer19" style="height: 300px; width: 100%;"></div>
+            <h3> Chart Humidity</h3>
+            <div id="chartContainer20" style="height: 300px; width: 100%;"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script>
+  window.onload = function () {
+  var syntheticTemp = new CanvasJS.Chart("chartContainer", {
+    animationEnabled: true,
+      title:{
+        text: "Daily High Temperature at Different Beaches"
+      },
+      axisX: {
+        title: "Time"
+      },
+      axisY: {
+        title: "Temperature (in °C)",
+        includeZero: false,
+        suffix: " °C"
+      },
+      legend:{
+        cursor: "pointer",
+        fontSize: 16,
+        itemclick: toggleDataSeries
+      },
+      toolTip:{
+        shared: true
+      },
+      data: [{
+        type: "line",
+    		name: "CPU Utilization",
+    		connectNullData: true,
+    		//nullDataLineDashType: "solid",
+    		xValueType: "dateTime",
+    		xValueFormatString: "YY-MMM-DD  hh:mm:ss",
+    		yValueFormatString: "#,##0.##\"%\"",
+    		dataPoints: [
+          <% listN1.rows.forEach(function(dl) { %>
+          <%= "{ x: "+dl.created_at+", y: "+dl.humidity+" }," %>
+          <% }); %>
+    		]
+    	}]
+
+    });
+    //---------------------------------------------
+  var syntheticHumid = new CanvasJS.Chart("chartContainer2", {
+      theme:"light2",
+      animationEnabled: true,
+      title:{
+        text: "Humidity"
+      },
+      axisY :{
+        includeZero: false,
+        title: "%",
+        suffix: "%"
+      },
+      toolTip: {
+        shared: "true"
+      },
+      legend:{
+        cursor:"pointer",
+        itemclick : toggleDataSeries
+      },
+      data: [{
+        type: "spline",
+        visible: true,
+        showInLegend: true,
+        yValueFormatString: "##.00 %",
+        name: "Node 1",
+        dataPoints: [
+         <% listN1.rows.forEach(function(dl) { %>
+         <%= "{ y: "+dl.humidity+" }," %>
+         <% }); %>
+        ]
+      },
+      {
+        type: "spline",
+        showInLegend: true,
+        visible: true,
+        yValueFormatString: "##.00",
+        name: "Node 2",
+        dataPoints: [
+          <% listN2.rows.forEach(function(dl) { %>
+          <%= "{ y: "+dl.humidity+" }," %>
+          <% }); %>
+        ]
+      },
+      {
+        type: "spline",
+        showInLegend: true,
+        visible: true,
+        yValueFormatString: "##.00",
+        name: "Node 3",
+        dataPoints: [
+          <% listN3.rows.forEach(function(dl) { %>
+          <%= "{ y: "+dl.humidity+" }," %>
+          <% }); %>
+        ]
+      },
+      {
+        type: "spline",
+        showInLegend: true,
+        visible: true,
+        yValueFormatString: "##.00",
+        name: "Node 4",
+        dataPoints: [
+          <% listN4.rows.forEach(function(dl) { %>
+          <%= "{ y: "+dl.humidity+" }," %>
+          <% }); %>
+        ]
+      },
+      {
+        type: "spline",
+        showInLegend: true,
+        yValueFormatString: "##.00",
+        name: "Node 5",
+        dataPoints: [
+          <% listN5.rows.forEach(function(dl) { %>
+          <%= "{ y: "+dl.humidity+" }," %>
+          <% }); %>
+        ]
+      }]
+    });
+    ////////////////////////////
+  var floor1T = new CanvasJS.Chart("chartContainer3", {
+      theme:"light2",
+      animationEnabled: true,
+      title:{
+        text: "Temperature"
+      },
+      axisY :{
+        includeZero: false,
+        title: "%",
+        suffix: "%"
+      },
+      toolTip: {
+        shared: "true"
+      },
+      legend:{
+        cursor:"pointer",
+        itemclick : toggleDataSeries
+      },
+      data: [{
+        type: "spline",
+        visible: true,
+        showInLegend: true,
+        yValueFormatString: "##.00",
+        name: "Node 1",
+        dataPoints: [
+         <% listN1.rows.forEach(function(dl) { %>
+         <%= "{ y: "+dl.temperature+" }," %>
+         <% }); %>
+        ]
+      }]
+    });
+
+    syntheticTemp.render();
+    syntheticHumid.render();
+    floor1T.render();
+    floor1H.render();
+    floor2T.render();
+    floor2H.render();
+    floor3T.render();
+    floor3H.render();
+    floor4T.render();
+    floor4H.render();
+    floor5T.render();
+    floor5H.render();
+    floor6T.render();
+    floor6H.render();
+    floor7T.render();
+    floor7H.render();
+    floor8T.render();
+    floor8H.render();
+    floor9T.render();
+    floor9H.render();
+    function toggleDataSeries(e) {
+      if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible ){
+        e.dataSeries.visible = false;
+      } else {
+        e.dataSeries.visible = true;
+      }
+      syntheticTemp.render();
+      syntheticHumid.render();
+      floor1T.render();
+      floor1H.render();
+      floor2T.render();
+      floor2H.render();
+      floor3T.render();
+      floor3H.render();
+      floor4T.render();
+      floor4H.render();
+      floor5T.render();
+      floor5H.render();
+      floor6T.render();
+      floor6H.render();
+      floor7T.render();
+      floor7H.render();
+      floor8T.render();
+      floor8H.render();
+      floor9T.render();
+      floor9H.render();
+      }
+    }
+  </script>
+</body>
+</html>

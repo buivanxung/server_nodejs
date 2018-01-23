@@ -1,5 +1,5 @@
 {
-  "name": "node-login",
+  "name": "login",
   "version": "1.5.0",
   "description": "A template for quickly building login systems on top of Node.js & MongoDb",
   "author": "Stephen Braitsch <stephen@braitsch.io>",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:braitsch/node-login.git"
+    "url": "git+ssh://git@github.com/braitsch/node-login.git"
   },
   "dependencies": {
     "body-parser": "1.14.1",
@@ -37,5 +37,11 @@
   },
   "scripts": {
     "start": "node app.js"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/braitsch/node-login/issues"
+  },
+  "homepage": "https://github.com/braitsch/node-login#readme",
+  "main": "index.js",
+  "license": "ISC"
 }

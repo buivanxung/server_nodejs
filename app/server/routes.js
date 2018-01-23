@@ -243,7 +243,7 @@ module.exports = function(app) {
 	    if (err) {
 	      return console.error('error fetching client from pool', err)
 	    }
-	    client.query('SELECT * FROM lora_imst', function (err, result) {
+	    client.query("SELECT * FROM lora_imst", function (err, result) {
 	      done();
 
 	      if (err) {
@@ -251,7 +251,9 @@ module.exports = function(app) {
 	        return console.error('error happened during query', err)
 	      }
 	      //  console.log( " Gia tri muon in: " + result.rows[0]);
-	        res.render("showdata.ejs",{list:result});
+	            res.render("showdata.ejs",{list:result});
+              //res.render("analyze.ejs",{list:result});
+              console.log(result.rows[0]);
 	  });
 
 	  });
@@ -272,6 +274,64 @@ module.exports = function(app) {
 	     });
 	   });
 	 });
+//----------------------------------------------------------------------------------
+var ndo1=[],ndo2=[],obj1,obj2;
+//-----------------------------------------------------------------------------------
+  app.get("/chartdata", function(req,res){
+
+      pool.connect(function (err, client, done) {
+        if (err) {
+          return console.error('error fetching client from pool', err);
+        }
+        client.query("SELECT * FROM lora_imst where device_name='Node_1'", function (err, node1){
+          done();
+          if (err) {res.end()};
+          client.query("SELECT * FROM lora_imst where device_name='Node_2'", function (err, node2){
+            done();
+            if (err) {res.end()};
+            client.query("SELECT * FROM lora_imst where device_name='Node_3'", function (err, node3){
+              done();
+              if (err) {res.end()};
+              client.query("SELECT * FROM lora_imst where device_name='Node_4'", function (err, node4){
+                done();
+                if (err) {res.end()};
+                  client.query("SELECT * FROM lora_imst where device_name='Node_5'", function (err, node5){
+                    done();
+                    if (err) {res.end()};
+                      client.query("SELECT * FROM lora_imst where device_name='Node_6'", function (err, node6){
+                        done();
+                        if (err) {res.end()};
+                          client.query("SELECT * FROM lora_imst where device_name='Node_7'", function (err, node7){
+                            done();
+                            if (err) {res.end()};
+                              client.query("SELECT * FROM lora_imst where device_name='Node_8'", function (err, node8){
+                                done();
+                                if (err) {res.end()};
+                                  client.query("SELECT * FROM lora_imst where device_name='Node_9'", function (err, node9){
+                                    done();
+                                    if (err) {res.end()};
+                                    res.render("analyze.ejs",{listN1: node1,
+                                                              listN2: node2,
+                                                              listN3: node3,
+                                                              listN4: node4,
+                                                              listN5: node5,
+                                                              listN6: node6,
+                                                              listN7: node7,
+                                                              listN8: node8,
+                                                              listN9: node9
+                   }); //render
+                 });//qr9
+                });//qr8
+               });//qr7
+              });//qr6
+              });//qr5
+            });//qr4
+          });//qr3
+        }); //qr2
+      }); //qr1
+    });//pool
+  });
+
 	 function getdata( a, data) {
 	   //console.log(dot.pick(a,data));
 	   return dot.pick( a,data);
