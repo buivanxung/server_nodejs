@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title> Data LoRa   </title>
+  </head>
+
+  <body>
+     <table border="1">
+       <tr bgcolor = "#aaffff">
+	 <td>STT</td>
+         <td>Application ID</td>
+	 <td>Application Name</td>
+	 <td>Device Name</td>
+	 <td>DevEUI</td>
+         <td>MAC device</td>
+         <td>Gateway Name </td>
+         <td>RSSI</td>
+         <td>Frequency</td>
+	 <td>Code Rate</td>
+         <td>LoRaSNR</td>
+         <td>SpreadFactor</td>
+         <td>Bandwidth</td>
+         <td>Data</td>
+         <td>Temperature</td>
+         <td>Humidity</td>
+	 <td>CreatedAT</td>
+
+       </tr>
+
+       <% list.rows.forEach(function(d) { %>
+         <tr>
+           <td><%= d.id %></td>
+	   <td><%= d.application_id %></td>
+	   <td><%= d.application_name %></td>
+	   <td><%= d.device_name %></td>
+	   <td><%= d.dev_eui %></td>
+           <td><%= d.mac %></td>
+	   <td><%= d.gateway_name %></td>
+           <td><%= d.rssi %></td>
+           <td><%= d.frequency %></td>
+           <td><%= d.coderate %></td>
+           <td><%= d.lorasnr %></td>
+           <td><%= d.spreadfactor %></td>
+           <td><%= d.bandwidth %></td>
+           <td><%= d.data %></td>
+           <td><%= d.temperature %></td>
+           <td><%= d.humidity %></td>
+   	   <td><%= d.created_at %></td>
+
+
+         </tr>
+     <% }); %>
+     </table>
+  </body>
+</html>
