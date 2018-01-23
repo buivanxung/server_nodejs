@@ -243,7 +243,11 @@ module.exports = function(app) {
 	    if (err) {
 	      return console.error('error fetching client from pool', err)
 	    }
+<<<<<<< HEAD
 	    client.query("SELECT * FROM lora_imst", function (err, result) {
+=======
+	    client.query('SELECT * FROM lora_imst', function (err, result) {
+>>>>>>> develop
 	      done();
 
 	      if (err) {
@@ -251,13 +255,18 @@ module.exports = function(app) {
 	        return console.error('error happened during query', err)
 	      }
 	      //  console.log( " Gia tri muon in: " + result.rows[0]);
+<<<<<<< HEAD
 	            res.render("showdata.ejs",{list:result});
               //res.render("analyze.ejs",{list:result});
               console.log(result.rows[0]);
+=======
+	        res.render("showdata.ejs",{list:result});
+>>>>>>> develop
 	  });
 
 	  });
 	});
+<<<<<<< HEAD
   app.get("/actiondata", function(req,res) {
     pool.connect(function (err, client, done) {
       if (err) {
@@ -321,6 +330,8 @@ module.exports = function(app) {
    });
    });
  });
+=======
+>>>>>>> develop
 
 	app.get("/webdata", function(req,res) {
 	  pool.connect(function (err, client, done) {
@@ -337,6 +348,7 @@ module.exports = function(app) {
 	     });
 	   });
 	 });
+<<<<<<< HEAD
 //----------------------------------------------------------------------------------
 var ndo1=[],ndo2=[],obj1,obj2;
 //-----------------------------------------------------------------------------------
@@ -395,6 +407,8 @@ var ndo1=[],ndo2=[],obj1,obj2;
     });//pool
   });
 
+=======
+>>>>>>> develop
 	 function getdata( a, data) {
 	   //console.log(dot.pick(a,data));
 	   return dot.pick( a,data);

@@ -69,7 +69,11 @@ function onMessageArrived(message) {
     var topic = message.destinationName;
     var payload = message.payloadString;
     var parse_data = JSON.parse(payload);
+<<<<<<< HEAD
   //  var phyPayload1 = b64DecodeUnicode(parse_data.data);
+=======
+    var phyPayload1 = b64DecodeUnicode(parse_data.data);
+>>>>>>> develop
     //var buf = new Buffer(phyPayload1,'base64');
     //var payload2 = buf.toString();
     $('#ws').prepend('<li>' + topic + ' = ' + payload + '</li>');
