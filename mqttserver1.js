@@ -16,27 +16,6 @@ var host = 'ws://54.212.193.26:8086'
 var clientId = 'mqttjs_' + Math.random().toString(16).substr(2, 8)
 var id = 0;
 /////////////////////////////////////
-/*
-gateway/5ccf7ffffff01f6a/rx = {
-"rxInfo":
-{"mac":"5ccf7ffffff01f6a",
-"time":"0001-01-01T00:00:00Z",
-"timestamp":28758925,
-"frequency":868128723,
-"channel":0,"rfChain":0,
-"crcStatus":1,
-"codeRate":"4/5",
-"rssi":-93,
-"loRaSNR":-5,
-"size":21,
-"dataRate":
-{"modulation":"LORA",
-"spreadFactor":9,
-"bandwidth":125
-}
-},
-"phyPayload":"SF+w7XJGQx5GTRCFR0JSdsE5OFMG"}
-*/
 var parse;
 var mac;
 var rssi;
@@ -132,7 +111,6 @@ app.get("/viewdata", function(req,res) {
 //////////////////////////////////////////////
 
 
-
 function getdata( a, data) {
   return dot.pick( a,data);
 }
@@ -159,27 +137,30 @@ client.on('message', function (topic, message) {
   rfChain = getdata('rxInfo.rfChain', parse_data);
   crcStatus = getdata('rxInfo.crcStatus', parse_data);
   codeRate = getdata('rxInfo.codeRate', parse_data);
-  loRaSNR = getdata('rxInfo.loRaSNR', parse_data);
-  size = getdata('rxInfo.size', parse_data);
-  modulation = getdata('rxInfo.dataRate.modulation',parse_data);
-  spreadFactor = getdata('rxInfo.dataRate.spreadFactor', parse_data);
-  bandwidth = getdata('rxInfo.dataRate.bandwidth', parse_data);
-  phyPayload1 = getdata('phyPayload', parse_data);
+    if(codeRate != null) {
+      loRaSNR = getdata('rxInfo.loRaSNR', parse_data);
+      size = getdata('rxInfo.size', parse_data);
+      modulation = getdata('rxInfo.dataRate.modulation',parse_data);
+      spreadFactor = getdata('rxInfo.dataRate.spreadFactor', parse_data);
+      bandwidth = getdata('rxInfo.dataRate.bandwidth', parse_data);
+      phyPayload1 = getdata('phyPayload', parse_data);
+
 
   //var packet = lora_packet.fromWire(new Buffer(phyPayload.toString(), 'hex'));
   //console.log("packet.toString()=\n" + packet);
-
-  if(codeRate != null) {
     pool.connect(function (err, client, done) {
-      id++;
-      var buf = new Buffer(phyPayload1,'base64');
-      phyPayload2 = buf.toString();
-      console.log(phyPayload2);
+
+      var packet = lora_packet.fromWire(new Buffer(phyPayload1, 'base64'));
+
+      // debug: prints out contents
+      // - contents depend on packet type
+      // - contents are named based on LoRa spec
+      console.log("packet.toString()=\n" + packet);
         if (err) {
           return console.error('error fetching client from pool', err)
         }
-
-        client.query("INSERT INTO lora(id, mac, time, rssi, timestamp, frequency, channel, rfchain, crcstatus, coderate, lorasnr, size, modulation, spreadfactor, bandwidth, phypayload)  VALUES('"+id+"','"+mac+"','"+time+"','"+rssi+"','"+timestamp+"','"+frequency+"','"+channel+"','"+rfChain+"','"+crcStatus+"','"+codeRate+"','"+loRaSNR+"','"+size+"','"+modulation+"','"+spreadFactor+"', '"+bandwidth+"','"+phyPayload2+"')", function(err, result) {
+        id ++;
+        client.query("INSERT INTO lora(id,mac, time, rssi, timestamp, frequency, channel, rfchain, crcstatus, coderate, lorasnr, size, modulation, spreadfactor, bandwidth, phypayload)  VALUES('"+id+"','"+mac+"','"+time+"','"+rssi+"','"+timestamp+"','"+frequency+"','"+channel+"','"+rfChain+"','"+crcStatus+"','"+codeRate+"','"+loRaSNR+"','"+size+"','"+modulation+"','"+spreadFactor+"', '"+bandwidth+"','"+phyPayload1+"')", function(err, result) {
           done();
 
           if (err) {
