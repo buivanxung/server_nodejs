@@ -243,7 +243,7 @@ module.exports = function(app) {
 	    if (err) {
 	      return console.error('error fetching client from pool', err)
 	    }
-	    client.query('SELECT * FROM lora_imst', function (err, result) {
+	    client.query("SELECT * FROM lora_imst", function (err, result) {
 	      done();
 
 	      if (err) {
@@ -253,11 +253,74 @@ module.exports = function(app) {
 	      //  console.log( " Gia tri muon in: " + result.rows[0]);
 	            res.render("showdata.ejs",{list:result});
               //res.render("analyze.ejs",{list:result});
-              //console.log(result);
+              console.log(result.rows[0]);
 	  });
 
 	  });
 	});
+  app.get("/actiondata", function(req,res) {
+    pool.connect(function (err, client, done) {
+      if (err) {
+        return console.error('error fetching client from pool', err)
+      }
+      client.query("select id, temperature, humidity, created_at from lora_imst WHERE id = (select max(id) from lora_imst where device_name = 'Node_1')", function (err, node1) {
+        done();
+        if (err) {
+          res.end();}
+          client.query("select id, temperature, humidity, created_at from lora_imst WHERE id = (select max(id) from lora_imst where device_name = 'Node_2')", function (err, node2) {
+            done();
+            if (err) {
+              res.end();}
+              client.query("select id, temperature, humidity, created_at from lora_imst WHERE id = (select max(id) from lora_imst where device_name = 'Node_3')", function (err, node3) {
+                done();
+                if (err) {
+                  res.end();}
+                  client.query("select id, temperature, humidity, created_at from lora_imst WHERE id = (select max(id) from lora_imst where device_name = 'Node_4')", function (err, node4) {
+                    done();
+                    if (err) {
+                      res.end();}
+                      client.query("select id, temperature, humidity, created_at from lora_imst WHERE id = (select max(id) from lora_imst where device_name = 'Node_5')", function (err, node5) {
+                        done();
+                        if (err) {
+                          res.end();}
+                          client.query("select id, temperature, humidity, created_at from lora_imst WHERE id = (select max(id) from lora_imst where device_name = 'Node_6')", function (err, node6) {
+                            done();
+                            if (err) {
+                              res.end();}
+                              client.query("select id, temperature, humidity, created_at from lora_imst WHERE id = (select max(id) from lora_imst where device_name = 'Node_7')", function (err, node7) {
+                                done();
+                                if (err) {
+                                  res.end();}
+                                  client.query("select id, temperature, humidity, created_at from lora_imst WHERE id = (select max(id) from lora_imst where device_name = 'Node_8')", function (err, node8) {
+                                    done();
+                                    if (err) {
+                                      res.end();}
+                                      client.query("select id, temperature, humidity, created_at from lora_imst WHERE id = (select max(id) from lora_imst where device_name = 'Node_9')", function (err, node9) {
+                                        done();
+                                        if (err) {
+                                          res.end();}
+         res.render("action.ejs",{actN1: node1,
+                                  actN2: node2,
+                                  actN3: node3,
+                                  actN4: node4,
+                                  actN5: node5,
+                                  actN6: node6,
+                                  actN7: node7,
+                                  actN8: node8,
+                                  actN9: node9
+         }); //render
+          console.log(node9.rows[0].temperature);
+        });
+        });
+        });
+        });
+        });
+        });
+       });
+     });
+   });
+   });
+ });
 
 	app.get("/webdata", function(req,res) {
 	  pool.connect(function (err, client, done) {
@@ -274,30 +337,62 @@ module.exports = function(app) {
 	     });
 	   });
 	 });
-
+//----------------------------------------------------------------------------------
+var ndo1=[],ndo2=[],obj1,obj2;
+//-----------------------------------------------------------------------------------
   app.get("/chartdata", function(req,res){
-    pool.connect(function (err, client, done) {
-      if (err) {
-        return console.error('error fetching client from pool', err);
-      }
-      client.query('SELECT device_name, temperature, created_at FROM lora_imst WHERE application_id=1', function (err, r_temperature_1){
-        done();
+
+      pool.connect(function (err, client, done) {
         if (err) {
-          res.end();
-          return console.error('error data query',err);
+          return console.error('error fetching client from pool', err);
         }
-        console.log(r_temperature_1)
-        res.render("analyze.ejs",{temp_1:r_temperature_1});
-      });
-      client.query('SELECT humidity FROM lora_imst WHERE application_id=1', function (err, r_humidity_1){
-        done();
-        if (err) {
-          res.end();
-          return console.error('error data query',err);
-        }
-        res.render("analyze.ejs",{humid_1:r_humidity_1});
-      });
-    });
+        client.query("SELECT temperature, humidity, created_at FROM lora_imst where device_name='Node_1'", function (err, node1){
+          done();
+          if (err) {res.end()};
+          client.query("SELECT temperature, humidity, created_at FROM lora_imst where device_name='Node_2'", function (err, node2){
+            done();
+            if (err) {res.end()};
+            client.query("SELECT temperature, humidity, created_at FROM lora_imst where device_name='Node_3'", function (err, node3){
+              done();
+              if (err) {res.end()};
+              client.query("SELECT temperature, humidity, created_at FROM lora_imst where device_name='Node_4'", function (err, node4){
+                done();
+                if (err) {res.end()};
+                  client.query("SELECT temperature, humidity, created_at FROM lora_imst where device_name='Node_5'", function (err, node5){
+                    done();
+                    if (err) {res.end()};
+                      client.query("SELECT temperature, humidity, created_at FROM lora_imst where device_name='Node_6'", function (err, node6){
+                        done();
+                        if (err) {res.end()};
+                          client.query("SELECT temperature, humidity, created_at FROM lora_imst where device_name='Node_7'", function (err, node7){
+                            done();
+                            if (err) {res.end()};
+                              client.query("SELECT temperature, humidity, created_at FROM lora_imst where device_name='Node_8'", function (err, node8){
+                                done();
+                                if (err) {res.end()};
+                                  client.query("SELECT temperature, humidity, created_at FROM lora_imst where device_name='Node_9'", function (err, node9){
+                                    done();
+                                    if (err) {res.end()};
+                                    res.render("analyze.ejs",{listN1: node1,
+                                                              listN2: node2,
+                                                              listN3: node3,
+                                                              listN4: node4,
+                                                              listN5: node5,
+                                                              listN6: node6,
+                                                              listN7: node7,
+                                                              listN8: node8,
+                                                              listN9: node9
+                   }); //render
+                 });//qr9
+                });//qr8
+               });//qr7
+              });//qr6
+              });//qr5
+            });//qr4
+          });//qr3
+        }); //qr2
+      }); //qr1
+    });//pool
   });
 
 	 function getdata( a, data) {

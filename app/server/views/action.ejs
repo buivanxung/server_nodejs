@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    	<title>Show Data Realtime</title>
+    	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    	<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	    <link href="css/animate.css" rel="stylesheet" />
+    	<link href="css/style_home.css" rel="stylesheet">
+	    <link href="color/default.css" rel="stylesheet">
+      <style>
+          ul.nav-pills {
+         top: 50px;
+         position: fixed;
+         background-color: #f1f1f1;
+       }
+       </style>
+  </head>
+
+  <body id="page-top" data-spy="scroll" data-target=".navbar-custom">
+    <div id="preloader">
+  	  <div id="load"></div>
+  	</div>
+    <nav class="navbar navbar-custom navbar-fixed-bottom nav-pills" role="navigation" style="background:#23434">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="index.html">
+                  <!--  <h1>LoRa Management Device</h1> -->
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+	           <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+	              <ul class="nav nav-pills nav-stacked">
+       		         <li><a href="#">Back</a></li>
+		            </u>
+	             </div>
+             </div>
+           </nav>
+    <section id="intro" class="home-section text-center">
+    <div class="heading-about">
+      <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-sm-3 col-md-3">
+              <div class="wow bounceInUp" data-wow-delay="0.2s">
+                      <div class="team boxed-grey">
+                          <div class="inner">
+                  <h1>Floor 1</h1>
+                  <div class="row">
+                    <div class="col-xs-1 col-sm-3 col-md-3 " border-top-color = "1">
+                    <p class="subtitle">Status</p>
+                      <label class="switch">
+                          <input type="checkbox" checked>
+                          <span class="slider round"></span>
+                        </label>
+
+                      </div>
+                      <div class="col-xs-4 col-sm-4 col-md-4">
+                      <p  class="subtitle">Temper</p>
+                        <span> <h3> &nbsp;<%= actN1.rows[0].temperature %>&deg;C</h3></span>
+                        </div>
+                        <div class="col-xs-5 col-sm-5 col-md-5">
+                        <p class="subtitle">Humid</p>
+                            <h3>  &nbsp;<%= actN1.rows[0].humidity %>&permil;</h3>
+                          </div>
+                  </div>
+                               </div>
+                      </div>
+              </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-6" center>
+          <div class="wow bounceInDown" data-wow-delay="0.4s">
+          <div class="section-heading">
+          <h2>Block 1</h2>
+          <i class="fa fa-2x fa-angle-down"></i>
+          </div>
+          </div>
+        </div>
+
+      </div>
+      </div>
+    </div>
+    <div class="container">
+
+    <div class="row">
+      <div class="col-lg-2 col-lg-offset-5">
+        <hr class="marginbot-50">
+      </div>
+    </div>
+        <div class="row">
+            <div class="col-xs-6 col-sm-3 col-md-3">
+        <div class="wow bounceInUp" data-wow-delay="0.2s">
+                <div class="team boxed-grey">
+                    <div class="inner">
+            <h5>Floor 2</h5>
+            <div class="row">
+              <div class="col-xs-1 col-sm-3 col-md-3 " border-top-color = "1">
+              <p class="subtitle">Status</p>
+                <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider round"></span>
+                  </label>
+
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                <p  class="subtitle">Temper</p>
+                <span> <h3> &nbsp;<%= actN2.temperature %>&deg;C</h3></span>
+                  </div>
+                  <div class="col-xs-5 col-sm-5 col-md-5">
+                  <p class="subtitle">Humid</p>
+                      <h3>  &nbsp;<%= actN2.humidity %>&permil;</h3>
+                    </div>
+            </div>
+                        </div>
+                </div>
+        </div>
+            </div>
+      <div class="col-xs-6 col-sm-3 col-md-3">
+        <div class="wow bounceInUp" data-wow-delay="0.5s">
+                <div class="team boxed-grey">
+                    <div class="inner">
+            <h5>Floor 3</h5>
+            <div class="row">
+              <div class="col-xs-1 col-sm-3 col-md-3 " border-top-color = "1">
+              <p class="subtitle">Status</p>
+                <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider round"></span>
+                  </label>
+
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                <p  class="subtitle">Temper</p>
+                  <h3> &nbsp;<%= actN3.temperature %>&deg;C</h3>
+                  </div>
+                  <div class="col-xs-5 col-sm-5 col-md-5">
+                  <p class="subtitle">Humid</p>
+                      <h3> &nbsp;<%= actN3.humidity %>&permil;</h3>
+                    </div>
+            </div>
+                          </label>
+
+                    </div>
+                </div>
+        </div>
+            </div>
+      <div class="col-xs-6 col-sm-3 col-md-3">
+        <div class="wow bounceInUp" data-wow-delay="0.8s">
+                <div class="team boxed-grey">
+                    <div class="inner">
+            <h5>Floor 4</h5>
+            <div class="row">
+              <div class="col-xs-1 col-sm-3 col-md-3 " border-top-color = "1">
+              <p class="subtitle">Status</p>
+                <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider round"></span>
+                  </label>
+
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                <p  class="subtitle">Temper</p>
+                  <h3>  &nbsp;<%= actN4.temperature %>&deg;C</h3>
+                  </div>
+                  <div class="col-xs-5 col-sm-5 col-md-5">
+                  <p class="subtitle">Humid</p>
+                      <h3> &nbsp;<%= actN4.humidity %>&permil;</h3>
+                    </div>
+            </div>
+                          </label>
+
+                    </div>
+                </div>
+        </div>
+            </div>
+      <div class="col-xs-6 col-sm-3 col-md-3">
+        <div class="wow bounceInUp" data-wow-delay="1s">
+                <div class="team boxed-grey">
+                    <div class="inner">
+            <h5>Floor 5</h5>
+            <div class="row">
+              <div class="col-xs-1 col-sm-3 col-md-3 ">
+              <p class="subtitle">Status</p>
+                <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider round"></span>
+                  </label>
+
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                <p  class="subtitle">Temper</p>
+                  <h3>  &nbsp;<%= actN5.temperature %>&deg;C</h3>
+                  </div>
+                  <div class="col-xs-5 col-sm-5 col-md-5">
+                  <p class="subtitle">Humid</p>
+                      <h3> &nbsp;<%= actN5.humidity %>&permil;</h3>
+                    </div>
+            </div>
+                    </div>
+                </div>
+        </div>
+            </div>
+
+        </div>
+        <div class="row">
+          <div class="col-lg-2 col-lg-offset-5">
+            <hr class="marginbot-50">
+          </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-xs-6 col-sm-3 col-md-3">
+        <div class="wow bounceInUp" data-wow-delay="1.2s">
+                <div class="team boxed-grey">
+                    <div class="inner">
+            <h5>Floor 6</h5>
+            <div class="row">
+              <div class="col-xs-1 col-sm-3 col-md-3 ">
+              <p class="subtitle">Status</p>
+                <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider round"></span>
+                  </label>
+
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                <p  class="subtitle">Temper</p>
+                  <h3>  &nbsp;<%= actN6.temperature %>&deg;C</h3>
+                  </div>
+                  <div class="col-xs-5 col-sm-5 col-md-5">
+                  <p class="subtitle">Humid</p>
+                      <h3> &nbsp;<%= actN6.humidity %>&permil;</h3>
+                    </div>
+            </div>
+                         </div>
+                </div>
+        </div>
+            </div>
+            <div class="col-xs-6 col-sm-3 col-md-3">
+        <div class="wow bounceInUp" data-wow-delay="1.5s">
+                <div class="team boxed-grey">
+                    <div class="inner">
+            <h5>Floor 7</h5>
+            <div class="row">
+              <div class="col-xs-1 col-sm-3 col-md-3 ">
+              <p class="subtitle">Status</p>
+                <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider round"></span>
+                  </label>
+
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                <p  class="subtitle">Temper</p>
+                  <h3>  &nbsp;<%= actN7.temperature %>&deg;C</h3>
+                  </div>
+                  <div class="col-xs-5 col-sm-5 col-md-5">
+                  <p class="subtitle">Humid</p>
+                      <h3> &nbsp;<%= actN7.humidity %>&permil;</h3>
+                    </div>
+            </div>
+                        </div>
+                </div>
+        </div>
+            </div>
+            <div class="col-xs-6 col-sm-3 col-md-3">
+        <div class="wow bounceInUp" data-wow-delay="1.8s">
+                <div class="team boxed-grey">
+                    <div class="inner">
+            <h5>Floor 8</h5>
+            <div class="row">
+              <div class="col-xs-1 col-sm-3 col-md-3 " >
+              <p class="subtitle">Status</p>
+                <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider round"></span>
+                  </label>
+
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                <p  class="subtitle">Temper</p>
+                  <h3>  &nbsp;<%= actN8.temperature %>&deg;C</h3>
+                  </div>
+                  <div class="col-xs-5 col-sm-5 col-md-5">
+                  <p class="subtitle">Humid</p>
+                      <h3> &nbsp;<%= actN8.humidity %>&permil;</h3>
+                    </div>
+            </div>
+                        </div>
+                </div>
+        </div>
+            </div>
+            <div class="col-xs-6 col-sm-3 col-md-3">
+        <div class="wow bounceInUp" data-wow-delay="1.8s">
+                <div class="team boxed-grey">
+                    <div class="inner">
+            <h5>Floor 9</h5>
+            <div class="row">
+              <div class="col-xs-1 col-sm-3 col-md-3 " >
+              <p class="subtitle">Status</p>
+                <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider round"></span>
+                  </label>
+
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                <p  class="subtitle">Temper</p>
+                  <h5>  &nbsp;<%= actN9.rows[0].temperature %>&deg;C</h5>
+                  </div>
+                  <div class="col-xs-5 col-sm-5 col-md-5">
+                  <p class="subtitle">Humid</p>
+                      <h5> &nbsp;<%= actN9.rows[0].humidity %>&permil;</h5>
+                    </div>
+            </div>
+                        </div>
+                </div>
+        </div>
+            </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-2 col-lg-offset-5">
+        <hr class="marginbot-50">
+      </div>
+
+    </div>
+
+  </section>
+  <script src="js/js_page/jquery.min.js"></script>
+  <script src="js/js_page/bootstrap.min.js"></script>
+  <script src="js/js_page/jquery.easing.min.js"></script>
+  <script src="js/js_page/jquery.scrollTo.js"></script>
+  <script src="js/js_page/wow.min.js"></script>
+  <!-- Custom Theme JavaScript -->
+  <script src="js/js_page/custom.js"></script>
+  </body>
+  </html>
